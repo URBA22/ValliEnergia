@@ -1,9 +1,15 @@
 .container-responsive{
+  padding-top: 1rem;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
 
   @media(min-width: 760px){
+    padding-top: 2rem;
     width: 80%;
   }
+}
+
+.background-container{
+  background-image: '../../../assets/impianto-idroelettrico-x-1-1536x1024.png';
 }

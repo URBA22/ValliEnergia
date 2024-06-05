@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
-    NgbModule,
     RouterModule,
     RouterLink
   ],

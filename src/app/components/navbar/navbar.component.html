@@ -1,3 +1,4 @@
+<div class="container">
 <nav class="navbar navbar-expand-md navbar-light bg-light bg-gradient sticky-top">
   <div class="d-flex container-fluid justify-content-between">
     <a class="navbar-brand" routerLink="">
@@ -9,15 +10,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav ms-auto mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-lg-0" id="navbarBtn">
         <li class="nav-item">
-          <a class="nav-link" routerLink="">Homepage</a>
+          <button type="button" class="btn btn-primary btn-homepage" routerLink="">Homepage</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/centrali">Centrali</a>
+          <button type="button" class="btn btn-primary btn-centrali" routerLink="/centrali">Centrali</button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/percorsi">Percorsi</a>
+          <button type="button" class="btn btn-primary btn-percorsi" routerLink="/percorsi">Percorsi</button>
         </li>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -28,3 +29,4 @@
     </div>
   </div>
 </nav>
+</div>

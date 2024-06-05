@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -9,7 +8,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    NgbModule,
     HomepageComponent,
     NavbarComponent,
     RouterLink
