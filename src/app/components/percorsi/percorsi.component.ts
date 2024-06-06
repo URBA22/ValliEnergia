@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Percorsi} from '../../interfaces/percorsi';
+
 
 @Component({
   selector: 'app-percorsi',
@@ -7,6 +9,9 @@ import { Component } from '@angular/core';
   templateUrl: './percorsi.component.html',
   styleUrl: './percorsi.component.css'
 })
+
 export class PercorsiComponent {
+  
+
 
 }

@@ -1,0 +1,21 @@
+.btn-tutto{
+    border: 1px solid #5CB34A;
+    border-radius: 5%;
+    background-color: #5CB34A;
+    color: white;
+  }
+  .btn-agno{
+    border: 1px solid #C61E31;
+    border-radius: 5%;
+    background-color: #C61E31;
+    color: white;
+  }
+  .btn-astico{
+    border: 1px solid #114B6C;
+    border-radius: 5%;
+    background-color: #114B6C;
+    color: white;
+    
+  }
+
+  
