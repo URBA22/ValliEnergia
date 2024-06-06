@@ -1,0 +1,8 @@
+.btn-cards-select{
+    margin-left: auto;
+    margin-right: auto;
+    
+    @media(min-width: 760px){
+        
+    }
+}
