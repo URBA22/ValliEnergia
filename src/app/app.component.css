@@ -1,0 +1,13 @@
+.first{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.second{
+  position: relative;
+}
+
+.navbar-scrolled{
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.15);
+}
