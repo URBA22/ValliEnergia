@@ -9,7 +9,23 @@
   background-color: #C61E31;
 }
 .btn-percorsi{
-  border: 1px solid #114B6C;
+  border: 1px solid #F49B2D;
   border-radius: 5%;
-  background-color: #114B6C;
+  background-color: #F49B2D;
+}
+
+.toggler-custom{
+  background-color:#5CB34A;
+}
+
+.btn-outline-success{
+  background-color: #5CB34A;
+}
+
+.form-control{
+  background-color: rgb(92,179,74, 0.9);
+}
+
+.spaced{
+  margin-right: 0.3rem;
 }
