@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Percorsi} from '../../interfaces/percorsi';
-import { PERCORSI } from '../../interfaces/mock-percorsi';
+import { PERCORSI_TUTTI } from '../../interfaces/mock-percorsi';
 import { NgFor } from '@angular/common';
 
 @Component({
@@ -12,5 +12,5 @@ import { NgFor } from '@angular/common';
 })
 
 export class PercorsiComponent {
-  percorsi=PERCORSI;
+  percorsi=PERCORSI_TUTTI;
 }
