@@ -45,9 +45,16 @@
   }
 }
 
-.custom-list>li{
+.custom-list{
   @media(max-width: 767px){
-    justify-content: center;
+    margin-top: 1.5rem;
+  >li{
+      >button{
+        width: 100%;
+        text-align: center;
+        font-size: 1.15em;
+      }
+    }
   }
 }
 
@@ -81,4 +88,16 @@
 .btn-custom:hover{
   color: #2d2d2de6;
   transition: all 120;
+}
+
+.navbar-scrolled{
+  background-color: rgba(251, 255, 241, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.15);
+}
+
+.navbar-custom{
+  transition: all 0.3s;
+  @media(max-width: 767px){
+    background-color: white;
+  }
 }
