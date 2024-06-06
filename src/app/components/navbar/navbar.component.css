@@ -1,31 +1,84 @@
 .btn-homepage{
-  border: 1px solid #5CB34A;
-  border-radius: 5%;
-  background-color: #5CB34A;
+  border: 1px solid rgb(92, 179, 74);
+  border-radius: 0.2rem;
+  background-color: rgb(92, 179, 74);
+  color: rgba(255, 255, 255, 0.853);
 }
+.btn-homepage:active{
+  background-color: rgb(63, 123, 50);
+  border-color: rgb(63, 123, 50);
+  box-shadow: none;
+}
+
+
 .btn-centrali{
-  border: 1px solid #C61E31;
-  border-radius: 5%;
-  background-color: #C61E31;
+  border: 1px solid rgb(198, 30, 49);
+  border-radius: 0.2rem;
+  background-color: rgb(198, 30, 49);
+  color: rgba(255, 255, 255, 0.853);
 }
+.btn-centrali:active{
+  background-color: rgb(147, 22, 37);
+  border-color: rgb(147, 22, 37);
+  box-shadow: none;
+}
+
+
 .btn-percorsi{
-  border: 1px solid #F49B2D;
-  border-radius: 5%;
-  background-color: #F49B2D;
+  border: 1px solid rgb(244, 155, 45);
+  border-radius: 0.2rem;
+  background-color: rgb(244, 155, 45);
+  color: rgba(255, 255, 255, 0.853);
 }
+.btn-percorsi:active{
+  background-color: rgb(192, 119, 30);
+  border-color: rgb(192, 119, 30);
+  box-shadow: none;
+}
+
+.btn-custom{
+  margin-right: 0.3rem;
+  margin-top: 0;
+  @media(max-width: 767px){
+    margin-bottom: 0.3rem;
+    margin-right: 0;
+  }
+}
+
+.custom-list>li{
+  @media(max-width: 767px){
+    justify-content: center;
+  }
+}
+
+.btn-search{
+  background-color: rgb(63, 123, 50);
+  border-color: rgb(63, 123, 50);
+  color: rgba(255, 255, 255, 0.853);
+}
+.btn-search:active{
+  background-color: rgb(52, 103, 40);
+  border-color: rgb(52, 103, 40);
+  box-shadow: none;
+}
+
 
 .toggler-custom{
   background-color:#5CB34A;
 }
 
-.btn-outline-success{
-  background-color: #5CB34A;
-}
-
-.form-control{
+.form-control-custom, .form-control-custom:active, .form-control-custom:focus{
   background-color: rgb(92,179,74, 0.9);
+  border: 1px solid rgb(92,179,74, 0.9);
+  border-radius: 0.2rem;
+  box-shadow: none;
 }
 
-.spaced{
-  margin-right: 0.3rem;
+.btn-custom:focus{
+  box-shadow: none;
+  transition: all 120;
+}
+.btn-custom:hover{
+  color: #2d2d2de6;
+  transition: all 120;
 }

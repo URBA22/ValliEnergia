@@ -5,7 +5,7 @@
   margin-right: auto;
   width: 90%;
 
-  @media(min-width: 760px){
+  @media(max-width: 767px){
     padding-top: 6rem;
   }
 }
