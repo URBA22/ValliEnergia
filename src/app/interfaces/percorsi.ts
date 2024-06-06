@@ -1,7 +1,7 @@
 export interface Percorsi {
     name:string;
     id:number;
-    descprition:string;
+    description:string;
     centrale:string;
     img:string;
 }

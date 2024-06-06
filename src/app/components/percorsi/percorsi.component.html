@@ -9,3 +9,18 @@
         <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
         <label class="btn btn-outline-primary btn-astico" for="btnradio3" >Astico</label>
       </div>
+      <div class="container" width="100%" >
+        <ul class="card-list" *ngFor="let percorso of percorsi">
+          <li >
+            <div class="card" style="width: 18rem;">
+              <img src="{{percorso.img}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{percorso.name}}</h5>
+                <p class="card-text">{{percorso.description}}<br>{{percorso.centrale}}</p>
+                
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
