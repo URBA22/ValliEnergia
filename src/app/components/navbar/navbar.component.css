@@ -1,0 +1,15 @@
+.btn-homepage{
+  border: 1px solid #5CB34A;
+  border-radius: 5%;
+  background-color: #5CB34A;
+}
+.btn-centrali{
+  border: 1px solid #C61E31;
+  border-radius: 5%;
+  background-color: #C61E31;
+}
+.btn-percorsi{
+  border: 1px solid #114B6C;
+  border-radius: 5%;
+  background-color: #114B6C;
+}
