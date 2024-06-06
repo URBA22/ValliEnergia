@@ -1,19 +1,6 @@
 <div class="first">
-  <app-navbar class=""></app-navbar>
+  <app-navbar></app-navbar>
 </div>
 <div class="second">
     <router-outlet></router-outlet>
 </div>
-
-
-<script>
-  const navEl = document.querySelector('.navbar-scroll');
-
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 30){
-      navEl.classList.add('navbar-scrolled');
-    }else if(window.scollY <=30){
-      navEl.classList.remove('navbar-scrolled');
-    }
-  });
-</script>
