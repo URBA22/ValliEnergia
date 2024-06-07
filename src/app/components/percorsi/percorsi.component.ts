@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Percorsi} from '../../interfaces/percorsi';
-import { PERCORSI_TUTTI } from '../../interfaces/mock-percorsi';
+import { PERCORSI_AGNO, PERCORSI_ASTICO } from '../../interfaces/mock-percorsi';
 import { NgFor } from '@angular/common';
+
 
 @Component({
   selector: 'app-percorsi',
@@ -11,6 +12,21 @@ import { NgFor } from '@angular/common';
   styleUrl: './percorsi.component.css'
 })
 
+
+
 export class PercorsiComponent {
-  percorsi=PERCORSI_TUTTI;
+  percorsi : Percorsi[]=[...PERCORSI_ASTICO, ...PERCORSI_AGNO]
+  
+
+  onClick(val:number) {
+    if(val == 1)
+      {
+        this.percorsi=PERCORSI_AGNO
+      }
+    else 
+      {
+        this.percorsi=PERCORSI_ASTICO
+      }
+  }
+
 }

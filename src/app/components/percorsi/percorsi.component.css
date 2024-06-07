@@ -15,18 +15,16 @@
     border-radius: 5%;
     background-color: #114B6C;
     color: white;
-    
   }
 .container {
   display: flex;
   flex-wrap: wrap;
 
 }
-.card-list{
-  list-style: none;
-}
+
 
 .card{
+  margin : 5px;
   background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;

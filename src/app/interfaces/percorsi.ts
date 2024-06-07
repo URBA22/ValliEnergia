@@ -1,5 +1,6 @@
 export interface Percorsi {
     name:string;
+    id_location:string;
     id:number;
     description:string;
     centrale:string;
