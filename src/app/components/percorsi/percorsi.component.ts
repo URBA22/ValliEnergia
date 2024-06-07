@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Percorsi} from '../../interfaces/percorsi';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { PercorsiService } from '../../services/percorsi.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { Observable, Subject, debounceTime, distinctUntilChanged, filter, switchMap} from 'rxjs';
 
 @Component({
   selector: 'app-percorsi',
   standalone: true,
   imports: [
     NgFor,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers:[HttpClient],
   templateUrl: './percorsi.component.html',
@@ -19,20 +20,62 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
-export class PercorsiComponent{
+export class PercorsiComponent implements OnInit{
+  percorsiFiltered : Percorsi[]=[]
+  percorsiListDefinitive : Percorsi[] = []
+  private searchParams = new Subject<string>();
+
   constructor(private percorsiService: PercorsiService){}
+
+
+  search(term: string): void {
+    this.searchParams.next(term);
+  }
   
   ngOnInit():void{
     this.getPercorsi();
+  };
+
+  getPercorsi(): void{
+    this.percorsiService.fetchPercorsi().subscribe(tmpPercorsiList=> {
+      this.percorsiListDefinitive = this.percorsiFiltered = tmpPercorsiList;
+      
+    });
+  };
+  filterPercorsi(term:string) : Percorsi[]
+  {
     
-  }
-  percorsi : Percorsi[]=[];
+    this.percorsiFiltered.forEach(tempPercorsi=>{
+      if(tempPercorsi.nome.includes(term))
+        {
 
-  getPercorsi():void{
-    this.percorsiService.fetchPercorsi().subscribe(item=>this.percorsi=item)
-  }
+        }
+
+        return this.percorsiFiltered    })
+
+
+  } 
   
-
+  /*
+  searchPercorsi(term: string): Percorsi[] {
+    if (!term.trim()) {
+      return this.percorsi;  
+    }
+    return this.percorsi.filter(this.contiene(term))
+  }
+  contiene(params:string):Percorsi {
+  }
+  */
+/*
+  searchPercorsi(searchParams: string) : Percorsi[] {
+    if(searchParams){
+      const filteredArray = this.percorsi.filter((Percorsi) => {
+      });
+      return filteredArray;
+    }
+  }
+   */ 
+  }
  /* onClick(val:number) {
     if(val == 1)
       {
@@ -44,4 +87,5 @@ export class PercorsiComponent{
       }
   }
 */
-}
+
+ //(input)="searchPercorsi(searchBox.value)"
