@@ -1,4 +1,4 @@
-import { Percorsi } from "./percorsi";
+/*import { Percorsi } from "./percorsi";
 export const PERCORSI_AGNO: Percorsi[] = [  
     { id: 1, id_location:'AG', name: 'Percorso dell orso', description: 'AAA', centrale: 'Centrale Montagna Spaccata', img: 'https://picsum.photos/200/100' },
     { id: 2, id_location:'AG', name: 'Sentiero delle aquile', description: 'BBB', centrale: 'Centrale Valle del Vento', img: 'https://picsum.photos/200/100' },
@@ -23,4 +23,4 @@ export const PERCORSI_ASTICO: Percorsi[] = [
     { id: 9, id_location:'AS',name: 'Percorso dei gufi', description: 'III', centrale: 'Centrale Monte Ombroso', img: 'https://picsum.photos/200/100' },
     { id: 10, id_location:'AS',name: 'Sentiero delle volpi', description: 'JJJ', centrale: 'Centrale Bosco delle Fate', img: 'https://picsum.photos/200/100' },
 ];
-export const PERCORSI_TUTTI: Percorsi[] = [...PERCORSI_ASTICO, ...PERCORSI_AGNO];
+*/

@@ -1,8 +1,10 @@
+import { DettagliPercorso } from "./dettagli-percorso";
+import { Immagine } from "./immagine";
+
 export interface Percorsi {
-    name:string;
-    id_location:string;
     id:number;
-    description:string;
-    centrale:string;
-    img:string;
+    nome:string;
+    descrizione:string;
+    percorso:DettagliPercorso;
+    immagini:Immagine[];
 }

@@ -1,13 +1,13 @@
 
     <div class="container-responsive">
-        <div class="btn-group btn-group-lg" (click)="onClick(0)" role="group" aria-label="Large button group">
+        <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
             <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
             <label class="btn btn-outline-primary btn-tutto" for="tutti">Tutti i percorsi</label>
           
-            <input group="x" type="radio" (click)="onClick(1)" class="btn-check" name="btnradio" id="agno" autocomplete="off">
+            <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
             <label class="btn btn-outline-primary btn-agno" for="agno">Agno</label>
           
-            <input group="x" type="radio" (click)="onClick(2)" class="btn-check" name="btnradio" id="astico" autocomplete="off">
+            <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" autocomplete="off">
             <label class="btn btn-outline-primary btn-astico" for="astico">Astico</label>
         </div>
 
@@ -16,13 +16,13 @@
         </p>
 
         <div class="container row" >
-           <div class="card-list col-4" *ngFor="let percorso of percorsi">
+           <div class="card-list col-12 col-lg-4" *ngFor="let percorsi of percorsi">
                 <div class="d-flex justify-content-center">
                     <div class="card " style="width: 18rem;">
-                        <img src="{{percorso.img}}" class="card-img-top" alt="...">
+                        <img src="{{percorsi.immagini[0].url}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">{{percorso.name}}</h5>
-                            <p class="card-text">{{percorso.description}}<br>{{percorso.centrale}}</p>
+                            <h5 class="card-title">{{percorsi.nome}}</h5>
+                            <p class="card-text">{{percorsi.descrizione}}<br>{{percorsi.id}}</p>
                         </div>
                     </div>
                 </div>
