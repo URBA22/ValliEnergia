@@ -1,7 +1,11 @@
+import { DettagliCentrali } from "./dettagli-centrali";
+import { Immagine } from "./immagine";
+
 export interface Centrali {
-    id: number;
-    name: string;
-    description: string;
-    percorso: number;
-    img: string;
+    id:number;
+    nome:string;
+    desc:string;
+    dettagliTecnici:DettagliCentrali[];
+    percorsi:number[];
+    immagini:Immagine[];
 }
