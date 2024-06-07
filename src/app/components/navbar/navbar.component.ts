@@ -23,9 +23,9 @@ export class NavbarComponent implements AfterViewInit {
 
       window.addEventListener('scroll', () => {
         if(window.scrollY > 30){
-          navEl!.classList.add('navbar-scrolled');
+          navEl.classList.add('navbar-scrolled');
         }else if(window.scrollY <=30){
-          navEl!.classList.remove('navbar-scrolled');
+          navEl.classList.remove('navbar-scrolled');
         }
       });
   };

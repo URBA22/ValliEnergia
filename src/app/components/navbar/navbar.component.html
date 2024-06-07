@@ -1,27 +1,27 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom">
   <div class="d-flex container-fluid justify-content-between">
     <a class="navbar-brand" routerLink="">
       <div>
         <img alt="test" src="../../../assets/cropped-logo_300.ico" class="w-50">
       </div>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon bg-color-green"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav ms-auto mb-lg-0" id="navbarBtn">
+      <ul class="navbar-nav ms-auto mb-lg-0 custom-list">
         <li class="nav-item">
-          <button type="button" class="btn btn-primary btn-homepage" routerLink="">Homepage</button>
+          <button type="button" class="btn btn-primary btn-homepage btn-custom" routerLink="">Homepage</button>
         </li>
         <li class="nav-item">
-          <button type="button" class="btn btn-primary btn-centrali" routerLink="/centrali">Centrali</button>
+          <button type="button" class="btn btn-primary btn-centrali btn-custom" routerLink="/centrali">Centrali</button>
         </li>
         <li class="nav-item">
-          <button type="button" class="btn btn-primary btn-percorsi" routerLink="/percorsi">Percorsi</button>
+          <button type="button" class="btn btn-primary btn-percorsi btn-custom" routerLink="/percorsi">Percorsi</button>
         </li>
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control form-control-custom me-2" type="search" placeholder="Cerca" aria-label="search">
+        <button class="btn btn-outline-success btn-search" type="submit">Cerca</button>
       </form>
     </ul>
     </div>
