@@ -1,3 +1,29 @@
 <div class="container-responsive">
-  <p>centrali works!</p>
+  <div>
+    <h2>Centrali</h2>
+  </div>
+  <div class="btn-cards-select btn-group" role="group">
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+    <label class="btn btn-outline-primary btn-tutt" for="btnradio1">Tutte</label>
+  
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+    <label class="btn btn-outline-primary btn-agno" for="btnradio2">Agno</label>
+  
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+    <label class="btn btn-outline-primary btn-asti" for="btnradio3">Astico</label>
+  </div>
+  <div *ngIf="centraliAgno" class="card-layout" width="100%">
+    <ul *ngFor="let centrali of centraliTutte" class="card-list">
+      <li>
+        <div class="card centrale-card col" style="width: 18rem;">
+          <img src="{{centrali.img}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">{{centrali.name}}</h4>
+            <p class="card-text">{{centrali.description}}</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
