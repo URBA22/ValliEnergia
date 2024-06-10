@@ -1,4 +1,21 @@
-
 .bg-image{
-  background-image: url("https://levallidellenergiapulita.it/wp-content/uploads/2024/03/impianto-idroelettrico-x-1-1536x1024.png");
+  background: url("https://levallidellenergiapulita.it/wp-content/uploads/2024/03/impianto-idroelettrico-x-1-1536x1024.png") no-repeat fixed;
+}
+
+.font-1-3em{
+  font-size: 1.3em;
+}
+
+.positioning-custom{
+  padding: 2rem 3rem;
+  margin-bottom: 0;
+}
+
+.bg-green{
+  background: rgb(63,129,70, 0.85);
+}
+
+.border-custom{
+  border: 1px solid rgb(63,129,70, 0.85);
+  border-radius: 1rem;
 }
