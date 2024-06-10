@@ -16,12 +16,6 @@
     background-color: #114B6C;
     color: white;
   }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-
-}
-
 
 .card{
   margin : 5px;
@@ -31,5 +25,31 @@
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-height: 40rem;
+}
+.card-group{
+  max-width: 33.3%;
+  @media(max-width: 767px){
+    max-width: 100%
+  }
+}
+
+.container{
+  padding: 0;
+}
+.centrale-card{
+  margin: auto;
+  align-items: center;
+  margin-top: 2rem;
+  @media(max-width: 767px) {
+    width: 100%;
+  }
+}
+.card-mobile-flex{
+  @media(max-width: 767px){
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
 
 }

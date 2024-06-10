@@ -14,15 +14,15 @@ import { CentraliService } from '../../services/centrali.service';
 export class CentraliComponent {
 
   constructor(private centraliService: CentraliService){}
-  
+
   ngOnInit():void{
     this.getCentrali();
-    
+
   }
-  centraliList : Centrali[]=[];
+  centrali : Centrali[]=[];
 
   getCentrali():void{
-    this.centraliService.fetchCentrali().subscribe(item=>this.centraliList=item)
+    this.centraliService.fetchCentrali().subscribe(item=>this.centrali=item)
   }
 
 

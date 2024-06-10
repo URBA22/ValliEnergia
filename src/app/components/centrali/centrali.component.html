@@ -1,29 +1,31 @@
 <div class="container-responsive">
+
   <div>
-    <h2>Centrali</h2>
+    <div class="btn-cards-select btn-group" role="group">
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label class="btn btn-outline-primary btn-tutt" for="btnradio1">Tutte</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary btn-agno" for="btnradio2">Agno</label>
+
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+      <label class="btn btn-outline-primary btn-asti" for="btnradio3">Astico</label>
+    </div>
   </div>
-  <div class="btn-cards-select btn-group" role="group">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-    <label class="btn btn-outline-primary btn-tutt" for="btnradio1">Tutte</label>
-  
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-    <label class="btn btn-outline-primary btn-agno" for="btnradio2">Agno</label>
-  
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-    <label class="btn btn-outline-primary btn-asti" for="btnradio3">Astico</label>
-  </div>
-  <div *ngIf="centraliList" class="card-layout" width="100%">
-    <ul *ngFor="let centrali of centraliList" class="card-list">
-      <li>
-        <div class="card centrale-card col" style="width: 18rem;">
-          <img src="{{centrali.immagini}}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h4 class="card-title">{{centrali.nome}}</h4>
-            <p class="card-text">{{centrali.desc}}</p>
-            <a href="#" class="stretched-link"></a>
+  <div class="container">
+    <div class="row" >
+      <div class="card-group card-mobile-flex col-12 col-lg-4" *ngFor="let centrale of centrali">
+          <div class="centrale-card">
+              <div class="card">
+                  <img src="{{centrale.img[0].url}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">{{centrale.name}}</h5>
+                    <p class="card-text">{{centrale.description}}<br>{{centrale.id}}</p>
+                  </div>
+              </div>
           </div>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
+
 </div>

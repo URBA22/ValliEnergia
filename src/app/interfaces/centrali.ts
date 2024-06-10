@@ -3,9 +3,9 @@ import { Immagine } from "./immagine";
 
 export interface Centrali {
     id:number;
-    nome:string;
-    desc:string;
-    dettagliTecnici:DettagliCentrali[];
-    percorsi:number[];
-    immagini:Immagine[];
+    name:string;
+    description:string;
+    technical_details:DettagliCentrali[];
+    trails:number[];
+    img:Immagine[];
 }
