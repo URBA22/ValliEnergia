@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { NgIf } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,8 @@ import { NgIf } from '@angular/common';
     RouterOutlet,
     HomepageComponent,
     NavbarComponent,
-    RouterLink
+    RouterLink,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
