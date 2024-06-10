@@ -28,7 +28,6 @@
   max-height: 40rem;
 }
 .card-group{
-  max-width: 33.3%;
   @media(max-width: 767px){
     max-width: 100%
   }
