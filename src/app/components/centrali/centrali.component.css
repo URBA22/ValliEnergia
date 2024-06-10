@@ -1,47 +1,35 @@
-.btn-cards-select{
-    margin-left: auto;
-    margin-right: auto;
-    
-    @media(min-width: 760px){
-        
-    }
-}
-
-.btn-tutt{
+.btn-tutto{
     border: 1px solid #5CB34A;
     border-radius: 5%;
     background-color: #5CB34A;
     color: white;
   }
-.btn-agno{
+  .btn-agno{
     border: 1px solid #C61E31;
     border-radius: 5%;
     background-color: #C61E31;
     color: white;
   }
-.btn-asti{
+  .btn-astico{
     border: 1px solid #114B6C;
     border-radius: 5%;
     background-color: #114B6C;
     color: white;
   }
-.centrale-card{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
 }
-.card-layout{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-}
-.card-list{
-    list-style: none;
-    
-}
-.card-list.centrale-card{
-    padding-left: auto;
-    padding-right: auto;
-    
+
+
+.card{
+  margin : 5px;
+  background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
 }

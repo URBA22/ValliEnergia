@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Centrali } from '../../interfaces/centrali';
-import { CENTRALIAGNO, CENTRALIASTI } from '../../interfaces/mock-centrali';
 import { NgFor, NgIf } from '@angular/common';
+import { CentraliService } from '../../services/centrali.service';
 
 
 @Component({
@@ -12,8 +12,23 @@ import { NgFor, NgIf } from '@angular/common';
   styleUrl: './centrali.component.css'
 })
 export class CentraliComponent {
+
+  constructor(private centraliService: CentraliService){}
+  
+  ngOnInit():void{
+    this.getCentrali();
+    
+  }
+  centraliList : Centrali[]=[];
+
+  getCentrali():void{
+    this.centraliService.fetchCentrali().subscribe(item=>this.centraliList=item)
+  }
+
+
+  /*
   centraliAgno = CENTRALIAGNO;
   centraliAsti = CENTRALIASTI;
-  centraliTutte = [...this.centraliAgno, ...this.centraliAsti];
+  centraliTutte = [...this.centraliAgno, ...this.centraliAsti];*/
 
 }
