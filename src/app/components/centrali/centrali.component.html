@@ -12,14 +12,14 @@
     <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
     <label class="btn btn-outline-primary btn-asti" for="btnradio3">Astico</label>
   </div>
-  <div *ngIf="centraliAgno" class="card-layout" width="100%">
-    <ul *ngFor="let centrali of centraliTutte" class="card-list">
+  <div *ngIf="centraliList" class="card-layout" width="100%">
+    <ul *ngFor="let centrali of centraliList" class="card-list">
       <li>
         <div class="card centrale-card col" style="width: 18rem;">
-          <img src="{{centrali.img}}" class="card-img-top" alt="...">
+          <img src="{{centrali.immagini}}" class="card-img-top" alt="...">
           <div class="card-body">
-            <h4 class="card-title">{{centrali.name}}</h4>
-            <p class="card-text">{{centrali.description}}</p>
+            <h4 class="card-title">{{centrali.nome}}</h4>
+            <p class="card-text">{{centrali.desc}}</p>
             <a href="#" class="stretched-link"></a>
           </div>
         </div>
