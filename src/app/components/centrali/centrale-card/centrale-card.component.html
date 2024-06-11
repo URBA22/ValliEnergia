@@ -1,11 +1,22 @@
 
-  <div>
-    <img src="{{cent.img[0].url}}" alt="...">
-    <div>
-      <h5>{{cent.name}}</h5>
-      <p>{{cent.description}}</p>
-    </div>
-    <div>
-        {{cent.technical_details[3].value}}
+  <div class="full-card">
+    <div class="inner-card">
+      <div class="front-card">
+        <img src="{{cent.img[0].url}}" alt="...">
+        <h5>{{cent.name}}</h5>
+        <div>
+          <button type="button" class="btn btn-primary info-button" routerlink="centrali/:id">
+            Info
+          </button>
+        </div>
+      </div>
+      <div class="back-card">
+        <div>
+          <p>{{cent.description}}</p>
+        </div>
+        <div>
+            {{cent.technical_details[3].value}}
+        </div>
+      </div>
     </div>
   </div>

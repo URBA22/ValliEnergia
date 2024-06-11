@@ -4,6 +4,7 @@ import { CommonModule, NgFor } from '@angular/common';
 import { PercorsiService } from '../../services/percorsi.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable, Subject, debounceTime, distinctUntilChanged, filter, switchMap} from 'rxjs';
+import { PercorsoCardComponent } from './percorso-card/percorso-card.component';
 
 @Component({
   selector: 'app-percorsi',
@@ -11,7 +12,8 @@ import { Observable, Subject, debounceTime, distinctUntilChanged, filter, switch
   imports: [
     NgFor,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    PercorsoCardComponent
   ],
   providers:[HttpClient],
   templateUrl: './percorsi.component.html',
@@ -44,9 +46,10 @@ export class PercorsiComponent implements OnInit{
   };
   filterPercorsi(term:string) : Percorsi[]
   {
+    term = term.toLowerCase().trim();
     this.percorsiFiltered=[];
     this.percorsiListDefinitive.forEach(tempPercorsi=>{
-      if(tempPercorsi.nome.includes(term))
+      if(tempPercorsi.nome.toLowerCase().trim().includes(term))
         {
           this.percorsiFiltered.push(tempPercorsi);
         }

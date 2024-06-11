@@ -16,55 +16,20 @@
   background-color: #114B6C;
   color: white;
 }
+.container {
+display: flex;
+flex-wrap: wrap;
 
-.card{
-  margin : 5px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-.card-group{
-  @media(max-width: 767px){
-    max-width: 100%
-  }
 }
 
-.container{
-  width: 100%;
-  padding: 0;
-  margin: 0 1rem;
-  align-items: center;
-  @media(max-width: 767px){
-    margin: 0;
-  };
-}
+.search-bar{
 
-.centrale-card{
-  margin: auto;
-  width: 95%;
-  align-items: center;
+margin:5px;
+width: 500px;
+}
+.layout-scrollable{  
+  overflow-y: scroll;
+  height: 80vh;
+  width: 70vw;
   margin-top: 2rem;
-  @media(max-width: 767px) {
-    width: 100%;
-  }
-}
-.card-mobile-flex{
-  @media(max-width: 767px){
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  }
-}
-
-.btn-align{
-  width: 100%;
-  padding: 0;
-  margin: 0 1rem;
-  align-items: center;
-  @media(max-width: 767px){
-    margin: 0;
-  };
 }
