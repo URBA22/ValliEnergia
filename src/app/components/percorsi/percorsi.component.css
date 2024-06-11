@@ -22,15 +22,19 @@
 
 }
 
-
+.search-bar{
+  
+  margin:5px;
+  width: 500px;
+}
 .card{
   margin : 5px;
   background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 
 }
   
