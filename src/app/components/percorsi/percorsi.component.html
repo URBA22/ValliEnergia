@@ -10,6 +10,10 @@
             <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" autocomplete="off">
             <label class="btn btn-outline-primary btn-astico" for="astico">Astico</label>
         </div>
+        <form class="d-flex">
+            <input  #searchBox class="search-bar d-flex"(input)="filterPercorsi(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
+            
+        </form>
 
         <div class="container row" >
            <div class="card-group col-12 col-lg-4" *ngFor="let percorsi of percorsi">
@@ -19,6 +23,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{percorsi.nome}}</h5>
                             <p class="card-text">{{percorsi.descrizione}}<br>{{percorsi.id}}</p>
+                            <a href="#" class="stretched-link"></a>
                         </div>
                     </div>
                 </div>
