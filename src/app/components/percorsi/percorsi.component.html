@@ -1,8 +1,10 @@
+<div class="container-responsive">
+    <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
+        <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
+        <label class="btn btn-outline-primary btn-tutto" for="tutti">Tutti</label>
 
-    <div class="container-responsive">
-        <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
-            <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
-            <label class="btn btn-outline-primary btn-tutto" for="tutti">Tutti i percorsi</label>
+        <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
+        <label class="btn btn-outline-primary btn-agno" for="agno">Agno</label>
 
             <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
             <label class="btn btn-outline-primary btn-agno" for="agno">Agno</label>
@@ -14,20 +16,20 @@
             <input  #searchBox class="search-bar d-flex"(input)="filterPercorsi(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
 
         </form>
+  
+        <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" autocomplete="off">
+        <label class="btn btn-outline-primary btn-astico" for="astico">Astico</label>
+    </div>
+    <form class="d-flex">
+        <input  #searchBox class="search-bar d-flex"(input)="filterPercorsi(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
+    </form>
 
-        <div class="container row" >
-           <div class="card-group col-12 col-lg-4" *ngFor="let percorsi of percorsiFiltered">
-                <div class="d-flex justify-content-center">
-                    <div class="card " style="width: 18rem;">
-                        <img src="{{percorsi.immagini[0].url}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{percorsi.nome}}</h5>
-                            <p class="card-text">{{percorsi.descrizione}}<br>{{percorsi.id}}</p>
-                            <a href="#" class="stretched-link"></a>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="" >
+            <div class="" *ngFor="let percorso of percorsiFiltered">
+                <app-percorso-card [perc]="percorso"></app-percorso-card>
             </div>
         </div>
     </div>
+</div>
 
