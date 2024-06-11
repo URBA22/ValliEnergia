@@ -2,7 +2,10 @@
   <div class="inner-card">
     <div class="front-card">
       <img src="{{cent.img[0].url}}" alt="Image of {{cent.name}}">
-      <h5>{{cent.name}}</h5>
+      <h5>{{cent.name}}</h5>  
+      <button  type="button" class="btn btn-primary "(click)="setCentrale(cent)" routerLink="/centrali/{{cent.id}}">
+        Info
+      </button>
       
     </div>
     <div class="back-card">
