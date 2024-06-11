@@ -15,7 +15,10 @@
   <div class="container">
     <div class="" >
       <div class="" *ngFor="let centrale of centrali">
-            <app-centrale-card [cent]="centrale"></app-centrale-card>
+            <app-centrale-card [cent]="centrale">
+              <button type="button" class="btn btn-primary">Primary</button>
+            </app-centrale-card>
+            
       </div>
     </div>
   </div>

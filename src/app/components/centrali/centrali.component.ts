@@ -37,3 +37,4 @@ export class CentraliComponent {
   centraliTutte = [...this.centraliAgno, ...this.centraliAsti];*/
 
 }
+
