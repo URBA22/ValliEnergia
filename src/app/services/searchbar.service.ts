@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SearchResults } from '../interfaces/searchResults';
 import { PercorsiService } from './percorsi.service';
 import { CentraliService } from './centrali.service';
+import { Centrali } from '../interfaces/centrali';
+import { map } from 'rxjs';
+import { Percorsi } from '../interfaces/percorsi';
 import { join, parse } from 'path';
 
 @Injectable({
@@ -16,39 +18,38 @@ export class SearchbarService {
   ) { }
 
   search(term: string): SearchResults[]{
-    let percorsi = this.percorsiSrv.fetchPercorsi();
-    let centrali = this.centraliSrv.fetchCentrali();
+
     let joinedList : SearchResults[] = [];
-    let filteredList : SearchResults [] = [];
-    let parsedItem : SearchResults;
+    let tmpListPrc : SearchResults[] = [];
+    let tmpListCnt : SearchResults[] = [];
 
-    centrali.subscribe(item => {
-      item.map(element => {
-
-        parsedItem.id = element.id;
-        parsedItem.name = element.name;
-        parsedItem.type = "centrale";
-        parsedItem.relatedItems = element.trails.map(i => {
-          return i;
-        })
+    this.percorsiSrv.fetchPercorsi().subscribe(prc => {
+      prc.forEach(item => {
+          return{
+            id: item.id,
+            name: item.nome,
+            type: "percorso",
+            //relatedItems: item.centrali.map(i => {return i})
+          } as SearchResults;
         });
-        return joinedList.push(parsedItem);
-      });
-
-
-    percorsi.subscribe(item => {
-      item.map(element => {
-
-
-        parsedItem.id = element.id;
-        parsedItem.name = element.nome;
-        parsedItem.type = "percorso";
-        parsedItem.relatedItems = element.centrali.map(i => {
-          return i;
-        })
+        return tmpListPrc;
       })
-      joinedList.push(parsedItem);
-    });
+
+    this.centraliSrv.fetchCentrali().subscribe(centList => {
+      centList.map(item => {
+          return{
+            id: item.id,
+            name: item.name,
+            type: "percorso",
+            //relatedItems: item.trails.map(i => {return i})
+          } as SearchResults;
+        });
+        return tmpListCnt;
+      })
+
+    joinedList = tmpListPrc.concat(tmpListCnt);
+
+    let filteredList : SearchResults [] = [];
 
     filteredList = joinedList.filter(obj => {
       return obj.name.includes(term);

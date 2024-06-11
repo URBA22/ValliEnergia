@@ -23,7 +23,10 @@
         <input #searchBar class="form-control form-control-custom ms-1" type="search" placeholder="Cerca" aria-label="search" (input)="onSearch(searchBar.value)">
       </form>
     </ul>
-    <div *ngFor="let result of searchList">
+    <div *ngIf="searchBar.value">
+      <div *ngFor="let result of searchList" class="result-box">
+        <p>{{result.name}}</p>
+      </div>
     </div>
     </div>
   </div>

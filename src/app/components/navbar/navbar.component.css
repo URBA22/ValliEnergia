@@ -104,3 +104,9 @@
     background-color: white;
   }
 }
+
+.result-box{
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+}
