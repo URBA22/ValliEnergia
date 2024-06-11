@@ -1,25 +1,25 @@
 <div class="container-responsive">
+  <div>
+    <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
+        <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
+        <label class="btn btn-outline-primary btn-tutto" for="tutti">Tutte</label>
 
-  <div class="btn-align">
-    <div class="btn-cards-select btn-group" role="group">
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-      <label class="btn btn-outline-primary btn-tutt" for="btnradio1">Tutte</label>
+        <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
+        <label class="btn btn-outline-primary btn-agno" for="agno">Agno</label>
 
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-      <label class="btn btn-outline-primary btn-agno" for="btnradio2">Agno</label>
-
-      <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-      <label class="btn btn-outline-primary btn-asti" for="btnradio3">Astico</label>
+        <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" autocomplete="off">
+        <label class="btn btn-outline-primary btn-astico" for="astico">Astico</label>
     </div>
+    <form class="d-flex">
+        <input  #searchBox class="search-bar d-flex"(input)="filterCentrali(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
+    </form>
   </div>
-  <div class="container">
-    <div class="" >
-      <div class="" *ngFor="let centrale of centrali">
-            <app-centrale-card [cent]="centrale">
-              <button type="button" class="btn btn-primary">Primary</button>
-            </app-centrale-card>
-            
+  <div class="container layout-scrollable">
+      <div class="row" >
+        <div class="col-12 col-lg-4" *ngFor="let centrale of centraliFiltered">
+              <app-centrale-card [cent]="centrale"></app-centrale-card>
+        </div>
       </div>
-    </div>
   </div>
 </div>
+

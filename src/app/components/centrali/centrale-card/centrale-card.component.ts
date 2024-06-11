@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Centrali } from '../../../interfaces/centrali';
+import { EventEmitter } from 'stream';
+import { CentraliComponent } from '../centrali.component';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-centrale-card',
