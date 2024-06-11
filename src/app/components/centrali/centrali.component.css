@@ -1,35 +1,70 @@
 .btn-tutto{
-    border: 1px solid #5CB34A;
-    border-radius: 5%;
-    background-color: #5CB34A;
-    color: white;
-  }
-  .btn-agno{
-    border: 1px solid #C61E31;
-    border-radius: 5%;
-    background-color: #C61E31;
-    color: white;
-  }
-  .btn-astico{
-    border: 1px solid #114B6C;
-    border-radius: 5%;
-    background-color: #114B6C;
-    color: white;
-  }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-
+  border: 1px solid #5CB34A;
+  border-radius: 5%;
+  background-color: #5CB34A;
+  color: white;
 }
-
+.btn-agno{
+  border: 1px solid #C61E31;
+  border-radius: 5%;
+  background-color: #C61E31;
+  color: white;
+}
+.btn-astico{
+  border: 1px solid #114B6C;
+  border-radius: 5%;
+  background-color: #114B6C;
+  color: white;
+}
 
 .card{
   margin : 5px;
   background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.card-group{
+  @media(max-width: 767px){
+    max-width: 100%
+  }
+}
 
+.container{
+  width: 100%;
+  padding: 0;
+  margin: 0 1rem;
+  align-items: center;
+  @media(max-width: 767px){
+    margin: 0;
+  };
+}
+
+.centrale-card{
+  margin: auto;
+  width: 95%;
+  align-items: center;
+  margin-top: 2rem;
+  @media(max-width: 767px) {
+    width: 100%;
+  }
+}
+.card-mobile-flex{
+  @media(max-width: 767px){
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+}
+
+.btn-align{
+  width: 100%;
+  padding: 0;
+  margin: 0 1rem;
+  align-items: center;
+  @media(max-width: 767px){
+    margin: 0;
+  };
 }

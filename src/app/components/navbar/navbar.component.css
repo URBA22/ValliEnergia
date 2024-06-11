@@ -48,7 +48,7 @@
 .custom-list{
   @media(max-width: 767px){
     margin-top: 1.5rem;
-  >li{
+    >li{
       >button{
         width: 100%;
         text-align: center;
@@ -67,6 +67,9 @@
   background-color: rgb(52, 103, 40);
   border-color: rgb(52, 103, 40);
   box-shadow: none;
+}
+.btn-search:hover{
+  color: #2d2d2de6;
 }
 
 
@@ -91,7 +94,7 @@
 }
 
 .navbar-scrolled{
-  background-color: rgba(251, 255, 241, 0.9);
+  background-color: rgba(251, 255, 241, 0.95);
   box-shadow: rgba(0, 0, 0, 0.15);
 }
 

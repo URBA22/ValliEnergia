@@ -3,10 +3,10 @@
         <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
             <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
             <label class="btn btn-outline-primary btn-tutto" for="tutti">Tutti i percorsi</label>
-          
+
             <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
             <label class="btn btn-outline-primary btn-agno" for="agno">Agno</label>
-          
+
             <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" autocomplete="off">
             <label class="btn btn-outline-primary btn-astico" for="astico">Astico</label>
         </div>
@@ -15,10 +15,8 @@
             
         </form>
 
-        
-
         <div class="container row" >
-           <div class="card-list col-12 col-lg-4" *ngFor="let percorsi of percorsiFiltered">
+           <div class="card-group col-12 col-lg-4" *ngFor="let percorsi of percorsi">
                 <div class="d-flex justify-content-center">
                     <div class="card " style="width: 18rem;">
                         <img src="{{percorsi.immagini[0].url}}" class="card-img-top" alt="...">
@@ -33,4 +31,3 @@
         </div>
     </div>
 
-    
