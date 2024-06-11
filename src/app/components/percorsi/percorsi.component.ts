@@ -44,9 +44,11 @@ export class PercorsiComponent implements OnInit{
   };
   filterPercorsi(term:string) : Percorsi[]
   {
+    term=term.toLowerCase().trim();
+    
     this.percorsiFiltered=[];
     this.percorsiListDefinitive.forEach(tempPercorsi=>{
-      if(tempPercorsi.nome.includes(term))
+      if(tempPercorsi.nome.toLowerCase().trim().includes(term))
         {
           this.percorsiFiltered.push(tempPercorsi);
         }
