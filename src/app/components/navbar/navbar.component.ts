@@ -1,21 +1,23 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
+import { SearchbarService } from '../../services/searchbar.service';
+import { SearchResults } from '../../interfaces/searchResults';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [
     RouterModule,
-    RouterLink
+    RouterLink,
+    NgFor
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent implements AfterViewInit {
+export class NavbarComponent {
 
-  ngAfterViewInit(): void {
-
-  }
+  constructor(private searchSrv : SearchbarService){}
 
   @HostListener('window:scroll', [])
   onWindowScroll(){
@@ -29,28 +31,10 @@ export class NavbarComponent implements AfterViewInit {
         }
       });
   };
-/*
-  onClickToggler= ()=>{
-    const navEl = document.querySelector('.navbar') as HTMLElement;
 
-      if (navEl!.classList.contains('navbar-scrolled')){
-      }else{
-        return navEl!.classList.add('navbar-scrolled');
-      }
-    }
-*/
+  searchList : SearchResults[] = [];
+
+  onSearch(term: string){
+
   }
-
-/*
-<script>
-  const navEl = document.querySelector('.navbar');
-
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 30){
-      navEl.classList.add('navbar-scrolled');
-    }else if(window.scrollY <=30){
-      navEl.classList.remove('navbar-scrolled');
-    }
-  });
-</script>
-*/
+}

@@ -20,10 +20,12 @@
           <button type="button" class="btn btn-primary btn-percorsi btn-custom" routerLink="/percorsi">Percorsi</button>
         </li>
       <form class="d-flex">
-        <input class="form-control form-control-custom me-2" type="search" placeholder="Cerca" aria-label="search">
-        <button class="btn btn-outline-success btn-search" type="submit">Cerca</button>
+        <input #searchBar class="form-control form-control-custom ms-1" type="search" placeholder="Cerca" aria-label="search" (input)="onSearch(searchBar.value)">
       </form>
     </ul>
+    <div *ngFor="let result of searchList">
+      <p>{{result.name}}</p>
+    </div>
     </div>
   </div>
 </nav>
