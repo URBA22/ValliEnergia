@@ -6,5 +6,6 @@ export interface Percorsi {
     nome:string;
     descrizione:string;
     percorso:DettagliPercorso;
+    centrali: number[];
     immagini:Immagine[];
 }

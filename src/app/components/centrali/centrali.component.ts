@@ -27,7 +27,9 @@ export class CentraliComponent {
   centrali : Centrali[]=[];
 
   getCentrali():void{
-    this.centraliService.fetchCentrali().subscribe(item=>this.centrali=item)
+    this.centraliService.fetchCentrali().subscribe(item => {
+      return this.centrali = item;
+    });
   }
 
 
