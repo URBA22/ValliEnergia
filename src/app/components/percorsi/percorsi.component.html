@@ -11,20 +11,21 @@
             <label class="btn btn-outline-primary btn-astico" for="astico">Astico</label>
         </div>
         <form class="d-flex">
-            <input  #searchBox class="search-bar d-flex" type="search" placeholder="Cerca" aria-label="search">
+            <input  #searchBox class="search-bar d-flex"(input)="filterPercorsi(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
             
         </form>
 
         
 
         <div class="container row" >
-           <div class="card-list col-12 col-lg-4" *ngFor="let percorsi of percorsiListDefinitive">
+           <div class="card-list col-12 col-lg-4" *ngFor="let percorsi of percorsiFiltered">
                 <div class="d-flex justify-content-center">
                     <div class="card " style="width: 18rem;">
                         <img src="{{percorsi.immagini[0].url}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{percorsi.nome}}</h5>
                             <p class="card-text">{{percorsi.descrizione}}<br>{{percorsi.id}}</p>
+                            <a href="#" class="stretched-link"></a>
                         </div>
                     </div>
                 </div>
