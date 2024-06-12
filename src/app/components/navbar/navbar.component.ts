@@ -19,12 +19,28 @@ import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } fr
 })
 export class NavbarComponent{
 
-  searchList : SearchResults[] = [];
-
   constructor(private searchSrv : SearchbarService){}
 
+  fetchedList = this.searchSrv.fetchObjects();
+  filteredList : SearchResults[] = [];
+
   onSearch(term: string){
-    return this.searchList = this.searchSrv.search(term);
+    if(term){
+      return this.filterByTerm(term);
+    }
+    else{
+      this.filteredList = [];
+      return this.filteredList;
+    }
+  }
+
+  filterByTerm = (term: string) => {
+    this.filteredList = [];
+    this.fetchedList.forEach(e => {
+      if(e.name.toLowerCase().includes(term.trim()) || e.type.toLowerCase().includes(term.trim())){
+        this.filteredList.push(e);
+      }
+    });
   }
 
   //!DO NOT MODIFY

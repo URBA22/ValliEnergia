@@ -17,7 +17,7 @@ export class SearchbarService {
     private centraliSrv : CentraliService
   ) { }
 
-  search(term: string): SearchResults[]{
+  fetchObjects(): SearchResults[]{
 
     let joinedList : SearchResults[] = [];
 
@@ -45,12 +45,7 @@ export class SearchbarService {
           joinedList.push(tmpItem);
         });
       });
-
-    let filteredList : SearchResults [] = [];
-
-    filteredList = joinedList.filter(obj => {
-      return obj.name.includes(term);
-    })
-    return filteredList;
+      console.log(joinedList);
+      return joinedList;
   }
 }

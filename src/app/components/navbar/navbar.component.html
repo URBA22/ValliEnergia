@@ -24,7 +24,7 @@
       </form>
     </ul>
     <div *ngIf="searchBar.value">
-      <div *ngFor="let result of searchList" class="result-box">
+      <div *ngFor="let result of filteredList" class="result-box">
         <p>{{result.name}}</p>
       </div>
     </div>
