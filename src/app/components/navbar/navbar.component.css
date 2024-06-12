@@ -37,12 +37,15 @@
 }
 
 .btn-custom{
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
   margin-right: 0.3rem;
   margin-top: 0;
   @media(max-width: 767px){
     margin-bottom: 0.3rem;
     margin-right: 0;
   }
+
 }
 
 .custom-list{
@@ -82,6 +85,8 @@
   border: 1px solid rgb(92,179,74, 0.9);
   border-radius: 0.2rem;
   box-shadow: none;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
 }
 
 .btn-custom:focus{
@@ -118,6 +123,9 @@
   border-radius: 5px;
   background-color: rgba(251, 255, 241, 0.95);
   box-shadow: -6px 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
   /* CSS Mobile view to be fixed */
 
   @media(max-width: 767px){
