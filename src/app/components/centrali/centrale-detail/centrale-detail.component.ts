@@ -28,7 +28,7 @@ export class CentraleDetailComponent {
     trails: [11, 22, 33, 44],
     img: [
         { url: "https://picsum.photos/200/200", alt: "Vista frontale della Centrale Elettrica Alfa" },
-        { url: "https://picsum.photos/200/200", alt: "Turbine della Centrale Elettrica Alfa" }
+        { url: "https://picsum.photos/200/200", alt: "Turbine della Centrale Elettrica Alfa" },
     ]
   };
   

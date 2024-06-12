@@ -20,6 +20,11 @@
 .btn{
     margin:5px;
 }
+.img-list{
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
 
 .btn-container {
     margin-top: 20px;
