@@ -45,6 +45,9 @@ export class NavbarComponent{
 
   //!DO NOT MODIFY
   @HostListener('window:scroll', [])
+  /**
+   * Changes background of the navbar dinamically on scroll
+   */
   onWindowScroll(){
       const navEl = document.querySelector('.navbar') as HTMLElement;
 
@@ -55,5 +58,19 @@ export class NavbarComponent{
           navEl.classList.remove('navbar-scrolled');
         }
       });
+  };
+
+  /**
+   * Changes blur to the body of the page on input in searchBox
+  */
+  onInput(){
+    const bodyEl = document.querySelector('.second') as HTMLElement;
+    const resultboxEl = document.querySelector('.result-box') as HTMLElement;
+
+    if(resultboxEl){
+      bodyEl.style.filter = 'blur(2px)';
+    }else{
+      bodyEl.style.filter = 'blur(0px)';
+    }
   };
 }
