@@ -1,12 +1,27 @@
 <div class="container-responsive">
-    <div>
-        <h1>{{cent.name}}</h1>
+    <h1>{{ centrale.name }}</h1>
+    <div class="photo_container">
+        <img class="img left-aligned" [src]="centrale.img[0].url" [alt]="centrale.img[0].alt">
         <p>
-            <!-- >INSER>T ADDRESS -->
+            {{ centrale.description }}
         </p>
     </div>
-        
-        
-
-    
+    <div class="second-zone">
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let temp_dettagli of centrale.technical_details">
+                    <th scope="col">{{ temp_dettagli.type }}</th>
+                    <td>{{ temp_dettagli.value }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="btn-container">
+            <h2>Percorsi collegati</h2>
+            <div>
+                <button class="btn btn-primary" *ngFor="let trail of centrale.trails">
+                Percorso {{ trail }}
+                </button>
+            </div>
+          </div>
+    </div>
 </div>
