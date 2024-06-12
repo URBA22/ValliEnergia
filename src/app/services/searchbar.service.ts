@@ -20,34 +20,31 @@ export class SearchbarService {
   search(term: string): SearchResults[]{
 
     let joinedList : SearchResults[] = [];
-    let tmpListPrc : SearchResults[] = [];
-    let tmpListCnt : SearchResults[] = [];
 
     this.percorsiSrv.fetchPercorsi().subscribe(prc => {
       prc.forEach(item => {
-          return{
+          let tmpItem : SearchResults =
+          {
             id: item.id,
             name: item.nome,
             type: "percorso",
-            //relatedItems: item.centrali.map(i => {return i})
-          } as SearchResults;
+            relatedItems: item.centrali
+          }
+          joinedList.push(tmpItem);
         });
-        return tmpListPrc;
-      })
+      });
 
-    this.centraliSrv.fetchCentrali().subscribe(centList => {
-      centList.map(item => {
-          return{
+    this.centraliSrv.fetchCentrali().subscribe(cnt => {
+      cnt.forEach(item => {
+          let tmpItem : SearchResults = {
             id: item.id,
             name: item.name,
-            type: "percorso",
-            //relatedItems: item.trails.map(i => {return i})
-          } as SearchResults;
+            type: "centrale",
+            relatedItems: item.trails
+          }
+          joinedList.push(tmpItem);
         });
-        return tmpListCnt;
-      })
-
-    joinedList = tmpListPrc.concat(tmpListCnt);
+      });
 
     let filteredList : SearchResults [] = [];
 
