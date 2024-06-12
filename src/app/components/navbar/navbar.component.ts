@@ -45,9 +45,6 @@ export class NavbarComponent{
 
   //!DO NOT MODIFY
   @HostListener('window:scroll', [])
-  /**
-   * Changes background of the navbar dinamically on scroll
-   */
   onWindowScroll(){
       const navEl = document.querySelector('.navbar') as HTMLElement;
 

@@ -1,5 +1,5 @@
 .navbar-custom{
-  transition: all 120;
+  transition: all 0.3s;
   @media(max-width: 767px){
     background-color: white;
   }
@@ -87,11 +87,6 @@ button.btn-custom:focus, .linkactive{
   font-weight: 600;
 }
 
-
-
-
-
-
 .result-box{
   position: absolute;
   overflow-y: auto;
@@ -108,7 +103,6 @@ button.btn-custom:focus, .linkactive{
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   font-style: normal;
-  /* CSS Mobile view to be fixed */
 
   @media(max-width: 767px){
     max-height: 15rem;
