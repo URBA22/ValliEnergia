@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SearchResults } from '../interfaces/searchResults';
 import { PercorsiService } from './percorsi.service';
 import { CentraliService } from './centrali.service';
+import { Centrali } from '../interfaces/centrali';
+import { map } from 'rxjs';
+import { Percorsi } from '../interfaces/percorsi';
 import { join, parse } from 'path';
 
 @Injectable({
@@ -15,44 +17,35 @@ export class SearchbarService {
     private centraliSrv : CentraliService
   ) { }
 
-  search(term: string): SearchResults[]{
-    let percorsi = this.percorsiSrv.fetchPercorsi();
-    let centrali = this.centraliSrv.fetchCentrali();
+  fetchObjects(): SearchResults[]{
+
     let joinedList : SearchResults[] = [];
-    let filteredList : SearchResults [] = [];
-    let parsedItem : SearchResults;
 
-    centrali.subscribe(item => {
-      item.map(element => {
-
-        parsedItem.id = element.id;
-        parsedItem.name = element.name;
-        parsedItem.type = "centrale";
-        parsedItem.relatedItems = element.trails.map(i => {
-          return i;
-        })
+    this.percorsiSrv.fetchPercorsi().subscribe(prc => {
+      prc.forEach(item => {
+          let tmpItem : SearchResults =
+          {
+            id: item.id,
+            name: item.nome,
+            type: "percorso",
+            relatedItems: item.centrali
+          }
+          joinedList.push(tmpItem);
         });
-        return joinedList.push(parsedItem);
       });
 
-
-    percorsi.subscribe(item => {
-      item.map(element => {
-
-
-        parsedItem.id = element.id;
-        parsedItem.name = element.nome;
-        parsedItem.type = "percorso";
-        parsedItem.relatedItems = element.centrali.map(i => {
-          return i;
-        })
-      })
-      joinedList.push(parsedItem);
-    });
-
-    filteredList = joinedList.filter(obj => {
-      return obj.name.includes(term);
-    })
-    return filteredList;
+    this.centraliSrv.fetchCentrali().subscribe(cnt => {
+      cnt.forEach(item => {
+          let tmpItem : SearchResults = {
+            id: item.id,
+            name: item.name,
+            type: "centrale",
+            relatedItems: item.trails
+          }
+          joinedList.push(tmpItem);
+        });
+      });
+      console.log(joinedList);
+      return joinedList;
   }
 }

@@ -12,3 +12,9 @@
     padding-top: 6rem;
   }
 }
+
+body::-webkit-scrollbar{
+  display: none; /* Chrome and Safari */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

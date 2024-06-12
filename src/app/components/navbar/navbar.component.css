@@ -104,3 +104,30 @@
     background-color: white;
   }
 }
+
+.result-box{
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+  top: 100%;
+  right: 1%;
+  padding: 1rem 1rem;
+  width: 24rem;
+  max-height: 30rem;
+  border-radius: 5px;
+  background-color: rgba(251, 255, 241, 0.95);
+  box-shadow: -6px 4px 8px rgba(0, 0, 0, 0.2);
+  /* CSS Mobile view to be fixed */
+
+  @media(max-width: 767px){
+    max-height: 15rem;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    max-width: 98%;
+  }
+}
+.result-box::-webkit-scrollbar{
+  display: none;
+}
