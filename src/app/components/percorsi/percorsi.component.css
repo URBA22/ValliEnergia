@@ -13,8 +13,11 @@
 .container {
 display: flex;
 flex-wrap: wrap;
+flex-direction: row;
 }
-
+.btn-group{
+  z-index: 0;
+}
 .search-bar{
 
 margin:5px;
@@ -22,9 +25,9 @@ width: 500px;
 }
 .layout-scrollable{  
   overflow-y: scroll;
-  height: 80vh;
-  width: 90vw;
-  margin-top: 2rem;
+  height: 90vh;
+  width: 100vw;
+  padding-top: 10%;
 }
 .layout-scrollable::-webkit-scrollbar{
   display: none; /* Chrome and Safari */
@@ -35,6 +38,7 @@ width: 500px;
   background-color: white;
 }
 
-.btn-custom:active{
-  z-index: 0;
+
+.row{
+  margin: 0, 0;
 }
