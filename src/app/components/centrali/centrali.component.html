@@ -2,13 +2,13 @@
   <div class="justify-center">
     <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
         <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
-        <label class="btn btn-outline-primary btn-tutto" for="tutti">Tutte</label>
+        <label class="btn btn-outline-primary btn-tutto btn-custom" for="tutti">Tutte</label>
 
         <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
-        <label class="btn btn-outline-primary btn-agno" for="agno">Agno</label>
+        <label class="btn btn-outline-primary btn-agno btn-custom" for="agno">Agno</label>
 
         <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" autocomplete="off">
-        <label class="btn btn-outline-primary btn-astico" for="astico">Astico</label>
+        <label class="btn btn-outline-primary btn-astico btn-custom" for="astico">Astico</label>
     </div>
     <form class="d-flex">
         <input  #searchBox class="search-bar d-flex"(input)="filterCentrali(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
