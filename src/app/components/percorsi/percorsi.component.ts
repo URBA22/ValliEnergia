@@ -33,7 +33,7 @@ export class PercorsiComponent implements OnInit{
   search(term: string): void {
     this.searchParams.next(term);
   }
-  
+
   ngOnInit():void{
     this.getPercorsi();
   };
@@ -41,7 +41,7 @@ export class PercorsiComponent implements OnInit{
   getPercorsi(): void{
     this.percorsiService.fetchPercorsi().subscribe(tmpPercorsiList=> {
       this.percorsiListDefinitive = this.percorsiFiltered = tmpPercorsiList;
-      
+
     });
   };
   filterPercorsi(term:string) : Percorsi[]
@@ -56,12 +56,12 @@ export class PercorsiComponent implements OnInit{
       })
       return this.percorsiFiltered;
 
-  } 
-  
+  }
+
   /*
   searchPercorsi(term: string): Percorsi[] {
     if (!term.trim()) {
-      return this.percorsi;  
+      return this.percorsi;
     }
     return this.percorsi.filter(this.contiene(term))
   }
@@ -76,14 +76,14 @@ export class PercorsiComponent implements OnInit{
       return filteredArray;
     }
   }
-   */ 
+   */
   }
  /* onClick(val:number) {
     if(val == 1)
       {
         this.percorsi=PERCORSI_AGNO
       }
-    else 
+    else
       {
         this.percorsi=PERCORSI_ASTICO
       }

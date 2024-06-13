@@ -20,10 +20,29 @@
           <button type="button" class="btn btn-primary btn-percorsi btn-custom" routerLink="/percorsi">Percorsi</button>
         </li>
       <form class="d-flex">
-        <input class="form-control form-control-custom me-2" type="search" placeholder="Cerca" aria-label="search">
-        <button class="btn btn-outline-success btn-search" type="submit">Cerca</button>
+        <input #searchBar class="form-control form-control-custom" type="search" placeholder="Cerca" aria-label="search" (input)="onSearch(searchBar.value)" (input)="onInput()">
       </form>
-    </ul>
+      </ul>
+      <div *ngIf="searchBar.value" class="result-box d-flex flex-column">
+        <div *ngFor="let item of filteredList">
+
+
+          <div class=" d-flex flex-wrap">
+            <div *ngIf="item.type === 'centrale'" class="me-2">
+              <img src="../../../assets/droplet-fill.svg" alt="test">
+            </div>
+            <div *ngIf="item.type === 'percorso'" class="me-2">
+              <img src="../../../assets/person-walking.svg" alt="test">
+            </div>
+            <div>
+              <div class="d-flex flex-wrap">
+                {{item.name}}
+              </div>
+              <p>{{item.id}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
