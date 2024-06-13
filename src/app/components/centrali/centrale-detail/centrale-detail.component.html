@@ -1,7 +1,7 @@
 <div class="container-responsive">
     <h1>{{ centrale.name }}</h1>
     <div class="photo_container">
-        <img class="img left-aligned" [src]="centrale.img[0].url" [alt]="centrale.img[0].alt">
+        <img class="img left-aligned" src={{centrale.img[0].url}} alt={{centrale.img[0].alt}}>
         <p>
             {{ centrale.description }}
         </p>
@@ -24,7 +24,7 @@
             </div>
           </div>
           <div>
-            <img class="img-list"*ngFor="let img of centrale.img" src="{{img.url}}">
+            <img class="img-list"*ngFor="let img of centrale.img" src="{{img.url}}" alt="{{img.alt}}">
           </div>
     </div>
 </div>

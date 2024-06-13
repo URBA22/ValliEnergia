@@ -65,7 +65,7 @@ export class NavbarComponent{
     const resultboxEl = document.querySelector('.result-box') as HTMLElement;
 
     if(resultboxEl){
-      bodyEl.style.filter = 'blur(2px)';
+      bodyEl.style.filter = 'blur(0.04em)';
     }else{
       bodyEl.style.filter = 'blur(0px)';
     }
