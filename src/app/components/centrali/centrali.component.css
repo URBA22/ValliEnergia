@@ -13,18 +13,19 @@
 .container {
 display: flex;
 flex-wrap: wrap;
+flex-direction: column;
 }
-
+.btn-group{
+  z-index: 0;
+}
 .search-bar{
-
 margin:5px;
 width: 500px;
 }
 .layout-scrollable{  
   overflow-y: scroll;
   height: 80vh;
-  width: 90vw;
-  margin-top: 2rem;
+  width: 80vw;
 }
 .layout-scrollable::-webkit-scrollbar{
   display: none; /* Chrome and Safari */
@@ -34,7 +35,11 @@ width: 500px;
 .btn-custom{
   background-color: white;
 }
-
-.btn-custom:active{
-  z-index: 0;
+.second{
+  height: 90%;
+  overflow: hidden;
+  padding-top: 5%;
+}
+.container-responsive{
+  margin-top: 6rem;
 }

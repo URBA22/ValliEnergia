@@ -18,7 +18,9 @@
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .full-card:hover .inner-card {
-    transform: rotateY(180deg);
+    @media(min-width:767px) {
+      transform: rotateY(180deg);
+    }
   }
   
   /* Position the front and back side */
@@ -43,5 +45,4 @@
     color: black;
     transform: rotateY(180deg);
     border-radius: 15%;
-    
   }

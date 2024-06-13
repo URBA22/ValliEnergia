@@ -15,11 +15,12 @@
     </form>
   </div>
   <div class="container layout-scrollable">
-      <div class="row" >
-        <div class="col-12 col-lg-4" *ngFor="let centrale of centraliFiltered">
-              <app-centrale-card [cent]="centrale"></app-centrale-card>
+        <div class="row" >
+            <div class="col-12 col-lg-4" *ngFor="let centrale of centraliFiltered">
+                <div>
+                    <app-centrale-card [cent]="centrale"></app-centrale-card>
+                </div>
+            </div>
         </div>
-      </div>
-  </div>
+    </div>
 </div>
-
