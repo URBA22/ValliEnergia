@@ -19,12 +19,14 @@ import { subscribe } from 'diagnostics_channel';
   templateUrl: './centrali.component.html',
   styleUrl: './centrali.component.css'
 })
+
+
 export class CentraliComponent implements OnInit {
   centraliFiltered : Centrali[]=[]
   centraliListDefinitive : Centrali[] = []
   private searchParams = new Subject<string>();
   constructor(private centraliService: CentraliService){}
-
+  
   search(term: string): void {
     this.searchParams.next(term);
   }
@@ -56,3 +58,4 @@ export class CentraliComponent implements OnInit {
 
   }
 }
+
