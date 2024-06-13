@@ -1,15 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 .container-responsive{
-  padding-top: 6rem;
+  padding: 6rem 2rem ;
   display: flex;
   justify-content:space-evenly;
   flex-direction: column;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  width: 90%;
+  width: 100%;
 
   @media(max-width: 767px){
-    padding-top: 6rem;
+    padding: 6rem 1rem;
   }
 }
 
@@ -18,3 +16,4 @@ body::-webkit-scrollbar{
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
