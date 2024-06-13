@@ -15,7 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css', '../fontstyle.css']
 })
 export class AppComponent {
   title = 'NG-Valli-dell-energia';
