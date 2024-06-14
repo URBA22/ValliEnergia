@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, NgModuleRef, OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { SearchbarService } from '../../services/searchbar.service';
 import { SearchResults } from '../../interfaces/searchResults';

@@ -28,30 +28,32 @@
       </ul>
       <div *ngIf="searchBar.value" class="result-box d-flex flex-column">
         <div *ngFor="let item of filteredList">
-
-
           <div class=" d-flex flex-wrap">
-            <div *ngIf="item.type === 'centrale'" class="d-flex flex-wrap">
-              <div class="me-2">
-                <img src="../../../assets/droplet-fill.svg" alt="test">
-              </div>
-              <div>
-                <div class="d-flex flex-wrap">
-                  {{item.name}}
+            <div *ngIf="item.type === 'percorso'"class="flex-fill">
+              <a href="/percorsi/{{item.id}}" class="d-flex link-style-hidden">
+                <div  class="me-2">
+                  <img src="../../../assets/person-walking.svg" alt="test">
                 </div>
-                <p>{{item.id}}</p>
-              </div>
+                <div>
+                  <div class="d-flex flex-wrap">
+                    {{item.name}}
+                  </div>
+                  <p>{{item.id}}</p>
+                </div>
+              </a>
             </div>
-            <div *ngIf="item.type === 'percorso'" class="d-flex flex-wrap">
-              <div  class="me-2">
-                <img src="../../../assets/person-walking.svg" alt="test">
-              </div>
-              <div>
-                <div class="d-flex flex-wrap">
-                  {{item.name}}
+            <div *ngIf="item.type === 'centrale'" class="flex-fill">
+              <a href="/centrali/{{item.id}}" class="d-flex link-style-hidden">
+                <div class="me-2">
+                  <img src="../../../assets/droplet-fill.svg" alt="test">
                 </div>
-                <p>{{item.id}}</p>
-              </div>
+                <div>
+                  <div class="d-flex flex-wrap">
+                    {{item.name}}
+                  </div>
+                  <p>{{item.id}}</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>

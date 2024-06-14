@@ -23,7 +23,7 @@ flex-direction: column;
 margin:5px;
 width: 500px;
 }
-.layout-scrollable{  
+.layout-scrollable{
   overflow-y: scroll;
   height: 80vh;
   width: 80vw;

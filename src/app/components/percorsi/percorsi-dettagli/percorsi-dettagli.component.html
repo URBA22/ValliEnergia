@@ -6,7 +6,7 @@
     </div>
     <div class="row align-items-center">
         <div class="photo_container col-12 col-md-6">
-            <img class="img-fluid left-aligned" [src]="percorso.immagini[0].url" [alt]="percorso.immagini[0].alt">
+            <img class="img-fluid left-aligned" src={{percorso.immagini[0].url}} alt={{percorso.immagini[0].alt}}>
         </div>
         <div class="col-12 mt-3">
             <p>{{ percorso.descrizione }}</p>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="img-list-container d-flex flex-wrap">
-                <img class="img-list img-fluid" *ngFor="let img of percorso.immagini" [src]="img.url" [alt]="img.alt">
+                <img class="img-list img-fluid" *ngFor="let img of percorso.immagini" src={{img.url}} alt={{img.alt}}>
             </div>
         </div>
     </div>
