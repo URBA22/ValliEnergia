@@ -1,34 +1,45 @@
 .btn-tutto{
-  border: 1px solid #5CB34A;
-  border-radius: 5%;
-  background-color: #5CB34A;
-  color: white;
+  background-color: white;
+  color: #5CB34A;
 }
 .btn-agno{
-  border: 1px solid #C61E31;
-  border-radius: 5%;
-  background-color: #C61E31;
-  color: white;
+  background-color: white;
+  color: #C61E31;
 }
 .btn-astico{
-  border: 1px solid #114B6C;
-  border-radius: 5%;
-  background-color: #125277;
-  color: white;
+  background-color: white;
+  color: #125277;
 }
 .container {
 display: flex;
 flex-wrap: wrap;
+flex-direction: row;
 }
-
+.btn-group{
+  z-index: 0;
+}
 .search-bar{
-
 margin:5px;
 width: 500px;
 }
 .layout-scrollable{  
   overflow-y: scroll;
   height: 80vh;
-  width: 70vw;
-  margin-top: 2rem;
+  width: 80vw;
+}
+.layout-scrollable::-webkit-scrollbar{
+  display: none; /* Chrome and Safari */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.btn-custom{
+  background-color: white;
+}
+.second{
+  height: 90%;
+  overflow: hidden;
+  padding-top: 5%;
+}
+.container-responsive{
+  margin-top: 6rem;
 }

@@ -35,11 +35,10 @@ export class CentraliComponent implements OnInit {
     this.getCentrali();
 
   }
-  centrali : Centrali[]=[];
 
   getCentrali():void{
     this.centraliService.fetchCentrali().subscribe(tmpCentraliList => {
-      return this.centrali = this.centraliFiltered = tmpCentraliList;
+      this.centraliListDefinitive = this.centraliFiltered = tmpCentraliList;
 
     });
   }
