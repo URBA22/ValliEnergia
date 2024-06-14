@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class CentraliService {
 
   constructor(private http:HttpClient) { }
-  private centraliUrl = "http://localhost:3000/centrali"; 
+  private centraliUrl = "http://192.168.123.24:3000/centrali";
 
   fetchCentrali ():Observable<Centrali[]>{
     return this.http.get<Centrali[]>(this.centraliUrl);
