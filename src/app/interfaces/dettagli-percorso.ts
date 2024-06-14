@@ -1,6 +1,6 @@
 export interface DettagliPercorso {
     id:number;
-    lungezza:number;
+    lunghezza:number;
     durata:number;
     dislivello:number;
 }

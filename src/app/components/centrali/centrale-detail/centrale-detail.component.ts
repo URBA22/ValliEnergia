@@ -24,29 +24,24 @@ export class CentraleDetailComponent implements OnInit {
   @Input() centrale: Centrali;
 
   constructor(private dataTransferService:DataTransferServiceService , private router:Router,private centraliSrv:CentraliService){ this.centrale = this.getCentrali();}
-  
+
   getCentrali() : Centrali
   {
-    return this.dataTransferService.GetCentrale(); 
+    return this.dataTransferService.GetCentrale();
   }
   ngOnInit(){
     let href=this.router.url;
-    console.log(href);
-   
     let idCentrale=href.substring( href.lastIndexOf('/')+1,999);
-    console.log(idCentrale)
     if(this.centrale===undefined)
       {
         this.centraliSrv.fetchCentraleByID(idCentrale).subscribe((item:Centrali)=>{
           this.centrale=item;
-          console.log(this.centrale);
-         
         });
-        
+
         return this.centrale;
       }
-      
+
   }
-  
+
 }
 

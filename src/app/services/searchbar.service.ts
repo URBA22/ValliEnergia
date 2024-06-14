@@ -41,7 +41,6 @@ export class SearchbarService {
           joinedList.push(tmpItem);
         });
       });
-      console.log(joinedList);
       return joinedList;
   }
 }
