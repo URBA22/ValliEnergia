@@ -14,5 +14,9 @@ export class CentraliService {
   fetchCentrali ():Observable<Centrali[]>{
     return this.http.get<Centrali[]>(this.centraliUrl);
   }
+  fetchCentraleByID(id:string):Observable<Centrali>{
+    let url = `${this.centraliUrl}/${id}` ;
+    return this.http.get<Centrali>(url);
+  }
 }
 

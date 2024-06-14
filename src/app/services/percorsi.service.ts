@@ -14,4 +14,8 @@ export class PercorsiService {
   fetchPercorsi():Observable<Percorsi[]>{
     return this.http.get<Percorsi[]>(this.percorsiUrl);
   };
+  fetchPercorsiByID(id:string):Observable<Percorsi>{
+    let url = `${this.percorsiUrl}/${id}` ;
+    return this.http.get<Percorsi>(url);
+  }
 }
