@@ -2,10 +2,6 @@ import { Injectable } from '@angular/core';
 import { SearchResults } from '../interfaces/searchResults';
 import { PercorsiService } from './percorsi.service';
 import { CentraliService } from './centrali.service';
-import { Centrali } from '../interfaces/centrali';
-import { map } from 'rxjs';
-import { Percorsi } from '../interfaces/percorsi';
-import { join, parse } from 'path';
 
 @Injectable({
   providedIn: 'root'
