@@ -1,19 +1,5 @@
-<div class="full-card">
-  <div class="inner-card">
-    <div class="front-card">
-      <img src="{{cent.img[0].url}}" alt="Image of {{cent.name}}">
-      <h5>{{cent.name}}</h5>  
-      <button  type="button" class="btn btn-primary "(click)="setCentrale(cent)" routerLink="/centrali/{{cent.id}}">
-        Info
-      </button>
-    </div>
-    <div class="back-card">
-      <div>
-        <p>{{cent.description}}</p>
-      </div>
-      <div>
-        {{cent.technical_details[3].value}}
-      </div>
-    </div>
+<div class="card-container">
+  <div class="img-container">
+    <img src="{{cent.img[0].url}}" alt=""/>
   </div>
 </div>
