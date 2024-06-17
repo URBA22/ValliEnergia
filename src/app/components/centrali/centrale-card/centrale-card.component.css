@@ -15,12 +15,12 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container 
+
+  /* Do an horizontal flip when you move the mouse over the flip box container
   .full-card:hover .inner-card {
     transform: rotateY(180deg);
   }*/
-  
+
   /* Position the front and back side */
   .front-card, .back-card {
     position: absolute;
@@ -29,14 +29,14 @@
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
-  
+
   /* Style the front side (fallback if image is missing) */
   .front-card {
     background-color: #bbb;
     color: black;
     border-radius: 15%;
   }
-  
+
   /* Style the back side */
   .back-card {
     background-color: #bbb;

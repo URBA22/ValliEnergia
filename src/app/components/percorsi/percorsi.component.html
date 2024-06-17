@@ -1,5 +1,5 @@
-<div class="offset-top flex-center">
-    <div class="justify-center">
+<div class="offset-top">
+    <div class="sticky-buttons">
       <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
         <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
         <label class="btn btn-outline-primary btn-tutto btn-custom" for="tutti">Tutto</label>
@@ -14,7 +14,7 @@
         <input  #searchBox class="search-bar d-flex"(input)="filterPercorsi(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
     </form>
     </div>
-    <div class="container layout-scrollable">
+    <div class="layout-scrollable">
         <div class="row">
             <div class="col-12 col-lg-4" *ngFor="let percorso of percorsiFiltered">
                 <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap"></app-percorso-card>
