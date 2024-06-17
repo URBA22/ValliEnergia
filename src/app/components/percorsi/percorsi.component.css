@@ -11,9 +11,16 @@
   color: #125277;
 }
 
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .btn-group{
   z-index: 0;
 }
+
 .search-bar{
 margin:5px;
 width: 500px;
@@ -21,8 +28,8 @@ width: 500px;
 
 .layout-scrollable, .container{
   overflow-y: scroll;
-  position: relative;
-  padding-top: 12rem;
+  height: 80vh;
+  width: 80vw;
 }
 .layout-scrollable::-webkit-scrollbar{
   display: none; /* Chrome and Safari */
@@ -33,15 +40,7 @@ width: 500px;
 .btn-custom{
   background-color: white;
 }
-.second{
-  height: 90%;
-  overflow: hidden;
-  padding-top: 5%;
-}
 
 .container-responsive{
-  padding-top: 6rem;
-  position: absolute;
-  left: 0;
-  right: 0;
+  margin-top: 6rem;
 }

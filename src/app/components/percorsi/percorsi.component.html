@@ -1,7 +1,8 @@
-<div class="container-responsive">
-    <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
+<div class="offset-top flex-center">
+    <div class="justify-center">
+      <div class="btn-group btn-group-lg"  role="group" aria-label="Large button group">
         <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
-        <label class="btn btn-outline-primary btn-tutto btn-custom" for="tutti">Tutti</label>
+        <label class="btn btn-outline-primary btn-tutto btn-custom" for="tutti">Tutto</label>
 
         <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
         <label class="btn btn-outline-primary btn-agno btn-custom" for="agno">Agno</label>
@@ -12,6 +13,7 @@
     <form class="d-flex">
         <input  #searchBox class="search-bar d-flex"(input)="filterPercorsi(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
     </form>
+    </div>
     <div class="container layout-scrollable">
         <div class="row">
             <div class="col-12 col-lg-4" *ngFor="let percorso of percorsiFiltered">

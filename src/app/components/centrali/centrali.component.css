@@ -10,11 +10,13 @@
   background-color: white;
   color: #125277;
 }
+
 .container {
 display: flex;
 flex-wrap: wrap;
 flex-direction: column;
 }
+
 .btn-group{
   z-index: 0;
 }
@@ -23,7 +25,8 @@ flex-direction: column;
 margin:5px;
 width: 500px;
 }
-.layout-scrollable{
+
+.layout-scrollable, .container{
   overflow-y: scroll;
   height: 80vh;
   width: 80vw;
@@ -36,11 +39,7 @@ width: 500px;
 .btn-custom{
   background-color: white;
 }
-.second{
-  height: 90%;
-  overflow: hidden;
-  padding-top: 5%;
-}
+
 .container-responsive{
   margin-top: 6rem;
 }

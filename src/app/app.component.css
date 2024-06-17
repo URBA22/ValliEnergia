@@ -1,10 +1,5 @@
-.first{
+.overlay{
   position: fixed;
   width: 100%;
   z-index: 1;
-}
-.second{
-  position: relative;
-  display: flex;
-  justify-content: center;
 }
