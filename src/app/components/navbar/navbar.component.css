@@ -116,6 +116,11 @@ button.btn-custom:focus, .linkactive{
   display: none;
 }
 
+.link-style-hidden{
+  color: black;
+  text-decoration: none;
+}
 .navbar-toggler{
   background-color:#5CB34A;
 }
+

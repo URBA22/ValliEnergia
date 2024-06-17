@@ -1,12 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Percorsi } from '../../../interfaces/percorsi';
+import { DataTransferServiceService } from '../../../services/data-transfer-service.service';
+import { Router } from '@angular/router';
+import { PercorsiService } from '../../../services/percorsi.service';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-percorsi-dettagli',
   standalone: true,
-  imports: [],
+  imports:[
+    NgFor,
+    NgIf
+  ],
   templateUrl: './percorsi-dettagli.component.html',
-  styleUrl: './percorsi-dettagli.component.css'
+  styleUrls: ['./percorsi-dettagli.component.css']
 })
-export class PercorsiDettagliComponent {
+export class PercorsiDettagliComponent implements OnInit {
+  @Input() percorso: Percorsi;
 
+  constructor(
+    private dataTransferService: DataTransferServiceService,
+    private router: Router,
+    private percorsoSrv: PercorsiService
+  ) { this.percorso = this.getCentrali() }
+
+  getCentrali() : Percorsi
+  {
+    return this.dataTransferService.GetPercorso();
+  }
+
+  ngOnInit() {
+    let href=this.router.url;
+    let idPrc=href.substring( href.lastIndexOf('/')+1,999);
+    if(this.percorso===undefined)
+      {
+        this.percorsoSrv.fetchPercorsiByID(idPrc).subscribe((item:Percorsi)=>{
+          this.percorso=item;
+        });
+
+        return this.percorso;
+      }
+  }
 }

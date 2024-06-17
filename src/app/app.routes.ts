@@ -13,6 +13,7 @@ export const routes: Routes = [
   {path: 'centrali', component: CentraliComponent},
   {path: 'percorsi', component: PercorsiComponent},
   {path: 'centrali/:id', component: CentraleDetailComponent},
+  {path: 'percorsi/:id', component: PercorsiDettagliComponent}
 
 ];
 
