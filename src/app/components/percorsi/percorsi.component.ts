@@ -25,31 +25,37 @@ import { PercorsoCardComponent } from './percorso-card/percorso-card.component';
 export class PercorsiComponent implements OnInit{
   percorsiFiltered : Percorsi[]=[]
   percorsiListDefinitive : Percorsi[] = []
-  private searchParams = new Subject<string>();
+  searchParam : string = '';
+  filterParam : string = '';
 
   constructor(private percorsiService: PercorsiService){}
 
 
   search(term: string): void {
-    this.searchParams.next(term);
+    this.searchParam = term;
+    this.filterPercorsi();
   }
 
   ngOnInit():void{
     this.getPercorsi();
   };
 
+  onSelect(term: string){
+    this.filterParam = term;
+    this.filterPercorsi();
+  }
   getPercorsi(): void{
     this.percorsiService.fetchPercorsi().subscribe(tmpPercorsiList=> {
       this.percorsiListDefinitive = this.percorsiFiltered = tmpPercorsiList;
 
     });
   };
-  filterPercorsi(term:string) : Percorsi[]
+  filterPercorsi() : Percorsi[]
   {
-    term = term.toLowerCase().trim();
+    let term = this.searchParam.toLowerCase().trim();
     this.percorsiFiltered=[];
     this.percorsiListDefinitive.forEach(tempPercorsi=>{
-      if(tempPercorsi.nome.toLowerCase().trim().includes(term))
+      if(tempPercorsi.nome.toLowerCase().trim().includes(term) && (this.filterParam === "ALL" || this.filterParam === tempPercorsi.zone))
         {
           this.percorsiFiltered.push(tempPercorsi);
         }

@@ -8,4 +8,5 @@ export interface Percorsi {
     percorso:DettagliPercorso;
     centrali: number[];
     immagini:Immagine[];
+    zone:string;
 }

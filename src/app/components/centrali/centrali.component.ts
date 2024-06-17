@@ -24,16 +24,23 @@ import { subscribe } from 'diagnostics_channel';
 export class CentraliComponent implements OnInit {
   centraliFiltered : Centrali[]=[]
   centraliListDefinitive : Centrali[] = []
-  private searchParams = new Subject<string>();
+  filterParam : string = '';
+  searchParam : string = '';
   constructor(private centraliService: CentraliService){}
   
   search(term: string): void {
-    this.searchParams.next(term);
+    this.searchParam = term;
+    this.filterCentrali();
   }
 
   ngOnInit():void{
     this.getCentrali();
 
+  }
+
+  onSelect(term: string){
+    this.filterParam = term;
+    this.filterCentrali();
   }
 
   getCentrali():void{
@@ -43,15 +50,18 @@ export class CentraliComponent implements OnInit {
     });
   }
 
-  filterCentrali(term:string) : Centrali[]
+  filterCentrali() : Centrali[]
   {
-    term = term.toLowerCase().trim();
+
+    //Condizione sul valore del filtro zona
+
+    let term = this.searchParam.toLowerCase().trim();
     this.centraliFiltered=[];
     this.centraliListDefinitive.forEach(tempCentrali=>{
-      if(tempCentrali.name.toLowerCase().trim().includes(term))
+      if(tempCentrali.name.toLowerCase().trim().includes(term) && (this.filterParam === "ALL" || this.filterParam === tempCentrali.zone))
         {
           this.centraliFiltered.push(tempCentrali);
-        }
+      }
       })
       return this.centraliFiltered;
 
