@@ -8,4 +8,5 @@ export interface Centrali {
     technical_details:DettagliCentrali[];
     trails:number[];
     img:Immagine[];
+    zone:string;
 }
