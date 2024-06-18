@@ -24,10 +24,10 @@ import { subscribe } from 'diagnostics_channel';
 export class CentraliComponent implements OnInit {
   centraliFiltered : Centrali[]=[]
   centraliListDefinitive : Centrali[] = []
-  filterParam : string = '';
+  filterParam : string = 'ALL';
   searchParam : string = '';
   constructor(private centraliService: CentraliService){}
-  
+
   search(term: string): void {
     this.searchParam = term;
     this.filterCentrali();

@@ -1,17 +1,17 @@
 <div class="offset-top">
   <div class="sticky-buttons">
       <div class="d-flex btn-group btn-group-custom"  role="group" aria-label="Large button group">
-          <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" autocomplete="off" checked>
+          <input group="x" type="radio" class="btn-check" name="btnradio" id="tutti" (click)="onSelect('ALL')" autocomplete="off" checked>
           <label class="btn btn-outline-primary btn-tutto btn-custom" for="tutti">Tutto</label>
 
-          <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" autocomplete="off">
+          <input group="x" type="radio"  class="btn-check" name="btnradio" id="agno" (click)="onSelect('AGN')"autocomplete="off">
           <label class="btn btn-outline-primary btn-agno btn-custom" for="agno">Agno</label>
 
-          <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" autocomplete="off">
+          <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" (click)="onSelect('AST')" autocomplete="off">
           <label class="btn btn-outline-primary btn-astico btn-custom" for="astico">Astico</label>
       </div>
       <form class="search-bar d-flex">
-          <input  #searchBox class="d-flex flex-grow-1"(input)="filterCentrali(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
+          <input #searchBox class="d-flex flex-grow-1" (input)="search(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
       </form>
   </div>
   <div class="layout-scrollable">
