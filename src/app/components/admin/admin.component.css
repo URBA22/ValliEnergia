@@ -1,0 +1,106 @@
+.admin-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding-top: 6rem;
+  }
+  
+  .admin-header {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+  }
+  
+  .admin-section {
+    margin-bottom: 20px;
+  }
+  
+  .admin-section h2 {
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+  }
+  
+  .admin-form {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .admin-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .admin-list li {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .admin-list li span {
+    display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .admin-actions {
+    margin-top: 10px;
+  }
+  
+  .admin-link {
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .admin-link:hover {
+    background-color: #ccc;
+  }
+  
+  .admin-form-input {
+    margin-bottom: 10px;
+  }
+  
+  .admin-form-input input, .admin-form-input select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .admin-form-input input[type="file"] {
+    padding: 6px;
+  }
+  
+  .admin-form-input button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .admin-form-input button:hover {
+    background-color: #333;
+  }
+  
+  .admin-form-edit {
+    margin-top: 10px;
+  }
+  

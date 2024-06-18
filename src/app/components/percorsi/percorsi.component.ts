@@ -26,7 +26,7 @@ export class PercorsiComponent implements OnInit{
   percorsiFiltered : Percorsi[]=[]
   percorsiListDefinitive : Percorsi[] = []
   searchParam : string = '';
-  filterParam : string = '';
+  filterParam : string = 'ALL';
 
   constructor(private percorsiService: PercorsiService){}
 
