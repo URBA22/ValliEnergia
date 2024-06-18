@@ -6,7 +6,7 @@
   width: 90vw;
   max-height: 60vh;
   margin-bottom: 2rem;
-  background-color: #bbb;
+  background-color: rgb(212, 255, 233);
   color: black;
   overflow: hidden;
   transition: transform .3s;
@@ -26,7 +26,6 @@
     width: 100%;
   }
 }
-
 .card-content{
   height: 45%;
   word-break: break-word;
@@ -47,9 +46,30 @@
     }
   }
 }
-
 .card-footer{
   height: 10%;
-  align-content: center;
-  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+/*** Handles icon animation on hover ***/
+.icon-container{
+  scale: 2;
+  >a>svg{
+    fill: inherit;
+  }
+}
+.icon-container:hover{
+  animation: icon-translate 2s infinite;
+  >a>svg{
+    fill: currentColor;
+  }
+}
+@keyframes icon-translate{
+  0%  {top: 0%; scale: 2}
+  50% {top: 20%; scale: 2.3}
+  100%{top: 0%; scale: 2}
+}
+
+.icon-container{
+  margin-right: 1rem;
 }
