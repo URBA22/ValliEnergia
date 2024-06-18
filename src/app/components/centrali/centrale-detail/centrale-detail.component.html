@@ -4,13 +4,25 @@
       <img class="main-img" src={{centrale.img[0].url}} alt={{centrale.img[0].alt}}>
       <div class="header-description">
         <h2>{{centrale.name}}</h2>
-        <p>
-          {{centrale.description}}
+        <p class="text-danger">
+          placeholder per inserire indirizzo
         </p>
       </div>
     </div>
+    <!-- CUSTOMIZED PART FOR CENTRALE DETAIL-->
     <div class="detail-content">
-      TEST
+      <div class="description">
+        <div>
+          <h5>{{centrale.description}}</h5>
+        </div>
+      </div>
+      <div class="technical-details">
+        <ul class="list-group list-group-flush d-flex">
+          <div *ngFor="let item of centrale.technical_details" class="">
+            <li class="list-group-item custom-list-item">{{item.type}}<span class="position-absolute end-0">{{item.value}}</span></li>
+          </div>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

@@ -6,7 +6,7 @@
   padding: 2rem 2rem;
   background-color: rgb(186, 186, 186);
   border-radius: 10px;
-  height: 100vh;
+  height: 100%;
 }
 
 .detail-header{
@@ -14,6 +14,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   @media (max-width: 767px) {
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -46,5 +47,24 @@
 }
 
 .detail-content{
-  padding-top: 1rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  >div{
+    width:50%;
+    @media(max-width: 767px){
+      width: 100%
+    }
+  }
+  >div:first-child{
+    padding-right: 2rem;
+    @media(max-width: 767px){
+      padding-right: 0;
+    }
+  }
+}
+
+.custom-list-item{
+  background-color: rgb(156, 156, 156);
+  border-color: rgb(100, 100, 100);
 }
