@@ -1,35 +1,16 @@
-<div class="offset-top flex-center">
-  <div class="row align-items-center">
-      <div class="photo_container col-12 col-md-6">
-          <img class="img-fluid left-aligned" src={{centrale.img[0].url}} alt={{centrale.img[0].alt}}>
+<div class="offset-top">
+  <div class="detail-card">
+    <div class="detail-header">
+      <img class="main-img" src={{centrale.img[0].url}} alt={{centrale.img[0].alt}}>
+      <div class="header-description">
+        <h2>{{centrale.name}}</h2>
+        <p>
+          {{centrale.description}}
+        </p>
       </div>
-      <div class="col-12 mt-3">
-          <p>{{ centrale.description }}</p>
-      </div>
-  </div>
-  <div class="row">
-      <div class="second-zone col-12 col-md-6">
-          <div class="table-responsive">
-              <table class="table">
-                  <tbody>
-                      <tr *ngFor="let temp_dettagli of centrale.technical_details">
-                          <th scope="col">{{ temp_dettagli.type }}</th>
-                          <td>{{ temp_dettagli.value }}</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
-          <div class="btn-container">
-              <h2>Percorsi collegati</h2>
-              <div>
-                  <button class="btn btn-primary mb-2" *ngFor="let trail of centrale.trails">
-                      Percorso {{ trail }}
-                  </button>
-              </div>
-          </div>
-          <div class="img-list-container d-flex flex-wrap">
-              <img class="img-list img-fluid" *ngFor="let img of centrale.img" src={{img.url}} alt={{img.alt}}>
-          </div>
+    </div>
+    <div class="detail-content">
+      TEST
     </div>
   </div>
 </div>
