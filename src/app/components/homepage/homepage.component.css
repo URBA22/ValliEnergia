@@ -6,8 +6,20 @@
   background-size:cover;
 }
 
-.font-1-3em{
-  font-size: 1.3em;
+/*superimposing padding in this component to avoid forcibly offsetting background image*/
+.container-responsive{
+  padding: 6rem 2rem;
+  @media(max-width: 767px){
+    padding: 6rem 1rem;
+  }
+}
+
+.offset-top{
+  margin-top: 0rem;
+}
+
+.font-custom{
+  font-size: 1.1em;
 }
 
 .positioning-custom{

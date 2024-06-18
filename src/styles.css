@@ -17,3 +17,12 @@ body::-webkit-scrollbar{
   scrollbar-width: none;  /* Firefox */
 }
 
+.offset-top{
+  margin-top: 6rem;
+}
+
+.flex-center{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}

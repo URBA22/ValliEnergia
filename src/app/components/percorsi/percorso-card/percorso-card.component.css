@@ -1,51 +1,75 @@
-.full-card{
-    border-radius: 15%;
-    justify-content: center;
-    background-color: transparent;
-    width: 100%;
-    height: 30rem;
-    perspective: 1000px;
-    margin-bottom: 2rem;
+.card-container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  justify-content:flex-start;
+  width: 90vw;
+  max-height: 60vh;
+  margin-bottom: 2rem;
+  background-color: rgb(212, 255, 233);
+  color: black;
+  overflow: hidden;
+  transition: transform .3s;
+  @media(max-width: 767px){
+    width: 85vw;
+  }
 }
-.inner-card {
-    position: relative;
+.card-container:hover{
+  transform: scale(1.05);
+}
+
+.img-container{
+  display: flex;
+  object-fit: fill;
+  height: 45%;
+  >img{
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
   }
-
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .full-card:hover .inner-card {
-    @media(min-width:767px) {
-      transform: rotateY(180deg);
+}
+.card-content{
+  height: 45%;
+  word-break: break-word;
+  hyphens: auto;
+  width: 100%;
+  display: inline-flex;
+  flex-flow: wrap column;
+  padding: 0.2rem 1rem;
+  >h2{
+    font-size: x-large;
+  }
+  >p{
+    line-height: 1.1;
+    font-size: 0.8em;
+    @media(max-width: 767px){
+      font-size: 1.1em;
+      line-height: 1;
     }
   }
+}
+.card-footer{
+  height: 10%;
+  margin-bottom: 1rem;
+}
 
-  /* Position the front and back side */
-  .front-card, .back-card {
-    position: absolute;
-    width:100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
+/*** Handles icon animation on hover ***/
+.icon-container{
+  scale: 2;
+  >a>svg{
+    fill: inherit;
   }
+}
+.icon-container:hover{
+  animation: icon-translate 2s infinite;
+  >a>svg{
+    fill: currentColor;
+  }
+}
+@keyframes icon-translate{
+  0%  {top: 0%; scale: 2}
+  50% {top: 20%; scale: 2.3}
+  100%{top: 0%; scale: 2}
+}
 
-  /* Style the front side (fallback if image is missing) */
-  .front-card {
-    background-color: #bbb;
-    color: black;
-    border-radius: 15%;
-    >img{
-      max-width: 100%;
-    }
-  }
-
-  /* Style the back side */
-  .back-card {
-    background-color: #bbb;
-    color: black;
-    transform: rotateY(180deg);
-    border-radius: 15%;
-  }
+.icon-container{
+  margin-right: 1rem;
+}
