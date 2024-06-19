@@ -1,5 +1,10 @@
 <div class="offset-top">
   <div class="detail-card">
+    <div class="icon-container w-25 mb-1">
+      <a href="centrali" title="..." class="d-flex flex-row flex-wrap align-items-baseline">
+        <button type="button" class="btn btn-primary"><span style="font-size: 1.3em;">◄</span></button>
+      </a>
+    </div>
     <div class="detail-header">
       <img class="main-img" src={{centrale.img[0].url}} alt={{centrale.img[0].alt}}>
       <div class="header-description">
@@ -9,7 +14,7 @@
         </p>
         <div class="description">
           <div>
-            <h5>{{centrale.description}}</h5>
+            <p class="fs-5">{{centrale.description}}</p>
           </div>
         </div>
       </div>
@@ -17,17 +22,21 @@
     <!-- CUSTOMIZED PART FOR CENTRALE DETAIL-->
     <div class="detail-content">
       <div class="technical-details">
-        <ul class="list-group list-group-flush">
-          <div *ngFor="let item of centrale.technical_details">
-            <li class="list-group-item custom-list-item">{{item.type}}<span class="position-absolute end-0">{{item.value}}</span></li>
-          </div>
-        </ul>
+        <h2>Dettagli tecnici</h2>
+        <table class="table">
+          <tbody *ngFor="let item of centrale.technical_details">
+            <tr>
+              <td scope="row">{{item.type}}</td>
+              <td class="text-end">{{item.value}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <div class="linked-percorsi" *ngIf="linkedPercorsi">
         <h2>Percorsi collegati</h2>
         <div class="row">
           <div class="col-12 col-lg-6" *ngFor="let percorso of linkedPercorsi">
-            <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap h-100"></app-percorso-card>
+            <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap h-"></app-percorso-card>
           </div>
         </div>
       </div>
