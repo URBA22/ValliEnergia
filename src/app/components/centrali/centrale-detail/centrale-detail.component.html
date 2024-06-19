@@ -7,21 +7,29 @@
         <p class="text-danger">
           placeholder per inserire indirizzo
         </p>
+        <div class="description">
+          <div>
+            <h5>{{centrale.description}}</h5>
+          </div>
+        </div>
       </div>
     </div>
     <!-- CUSTOMIZED PART FOR CENTRALE DETAIL-->
     <div class="detail-content">
-      <div class="description">
-        <div>
-          <h5>{{centrale.description}}</h5>
-        </div>
-      </div>
       <div class="technical-details">
-        <ul class="list-group list-group-flush d-flex">
-          <div *ngFor="let item of centrale.technical_details" class="">
+        <ul class="list-group list-group-flush">
+          <div *ngFor="let item of centrale.technical_details">
             <li class="list-group-item custom-list-item">{{item.type}}<span class="position-absolute end-0">{{item.value}}</span></li>
           </div>
         </ul>
+      </div>
+      <div class="linked-percorsi" *ngIf="linkedPercorsi">
+        <h2>Percorsi collegati</h2>
+        <div class="row">
+          <div class="col-12 col-lg-6" *ngFor="let percorso of linkedPercorsi">
+            <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap h-100"></app-percorso-card>
+          </div>
+        </div>
       </div>
     </div>
   </div>

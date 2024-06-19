@@ -1,12 +1,25 @@
 .offset-top{
-  padding: 0rem 2rem;
+  background: url(../../../../assets/piccole-dolomiti-1-1-e1711028882665-1024x497.png) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size:cover;
+  margin-top: 0rem;
+  padding: 6rem 2rem;
+  @media(max-width: 767px){
+    padding: 6rem 1rem;
+  }
+
 }
 
 .detail-card{
   padding: 2rem 2rem;
-  background-color: rgb(186, 186, 186);
+  background-color: rgb(225, 225, 225);
   border-radius: 10px;
   height: 100%;
+  @media(max-width: 767px){
+    padding: 2rem 1rem;
+  }
 }
 
 .detail-header{
@@ -67,4 +80,14 @@
 .custom-list-item{
   background-color: rgb(156, 156, 156);
   border-color: rgb(100, 100, 100);
+  font-size: 1.5vw;
+  @media(max-width: 767px){
+    font-size: 2.5vw;
+  }
+}
+
+.linked-percorsi{
+  @media (max-width: 767px){
+    margin-top: 2rem;
+  }
 }
