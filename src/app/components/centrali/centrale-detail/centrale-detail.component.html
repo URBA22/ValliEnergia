@@ -32,9 +32,12 @@
           </tbody>
         </table>
       </div>
-      <div class="linked-percorsi" *ngIf="linkedPercorsi">
+      <div class="linked-percorsi" >
         <h2>Percorsi collegati</h2>
-        <div class="row">
+        <div *ngIf="linkedPercorsi.length===0">
+          <p>Nessun percorso disponibile</p>
+        </div>
+        <div class="row" *ngIf="linkedPercorsi.length">
           <div class="col-12 col-lg-6" *ngFor="let percorso of linkedPercorsi">
             <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap h-"></app-percorso-card>
           </div>
