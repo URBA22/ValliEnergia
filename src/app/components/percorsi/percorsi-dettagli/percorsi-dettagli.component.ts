@@ -41,4 +41,13 @@ export class PercorsiDettagliComponent implements OnInit {
         return this.percorso;
       }
   }
+
+  ngAfterViewInit(){
+    let scriptDivRef = document.getElementById('oa-embed');
+    let script = document.createElement('script');
+    script.type = `text/javascript`;
+    script.src= this.percorso.percorso.id;
+
+    scriptDivRef!.appendChild(script);
+  }
 }

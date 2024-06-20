@@ -1,5 +1,5 @@
 export interface DettagliPercorso {
-    id:number;
+    id:string;
     lunghezza:number;
     durata:number;
     dislivello:number;
