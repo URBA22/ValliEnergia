@@ -2,7 +2,7 @@
     <div class="admin-header">
       <h1>Admin Page</h1>
     </div>
-  
+
     <div class="admin-section">
       <h2>Manage Centrali</h2>
       <div class="admin-form">
@@ -10,33 +10,33 @@
           <input [(ngModel)]="newCentrali.id" placeholder="ID" />
         </div>
         <div class="admin-form-input">
-          <input [(ngModel)]="newCentrali.name" placeholder="Name" />
+          <input [(ngModel)]="newCentrali.nome" placeholder="Name" />
         </div>
         <div class="admin-form-input">
-          <input [(ngModel)]="newCentrali.description" placeholder="Description" />
+          <input [(ngModel)]="newCentrali.descrizione" placeholder="Description" />
         </div>
         <div class="admin-form-input">
-          <select [(ngModel)]="newCentrali.zone">
+          <select [(ngModel)]="newCentrali.zona" title="...">
             <option value="AST">Astico</option>
             <option value="AGN">Agno</option>
           </select>
         </div>
-        
+
         <div class="admin-form-input">
           <button (click)="addCentrali()" class="admin-link">Add Centrali</button>
         </div>
       </div>
-  
+
       <ul class="admin-list">
         <li *ngFor="let centrali of centralis">
-          <span>{{centrali.id}} - {{centrali.name}} - {{centrali.description}} - {{centrali.zone}}</span>
+          <span>{{centrali.id}} - {{centrali.nome}} - {{centrali.descrizione}} - {{centrali.zona}}</span>
           <div class="admin-actions">
             <button (click)="editCentrali(centrali)" class="admin-link">Edit</button>
             <button (click)="deleteCentrali(centrali.id)" class="admin-link">Delete</button>
           </div>
         </li>
       </ul>
-  
+
       <div *ngIf="selectedCentrali" class="admin-form-edit">
         <h3>Edit Centrali</h3>
         <div class="admin-form">
@@ -44,25 +44,25 @@
             <input [(ngModel)]="selectedCentrali.id" placeholder="ID" />
           </div>
           <div class="admin-form-input">
-            <input [(ngModel)]="selectedCentrali.name" placeholder="Name" />
+            <input [(ngModel)]="selectedCentrali.nome" placeholder="Name" />
           </div>
           <div class="admin-form-input">
-            <input [(ngModel)]="selectedCentrali.description" placeholder="Description" />
+            <input [(ngModel)]="selectedCentrali.descrizione" placeholder="Description" />
           </div>
           <div class="admin-form-input">
-            <select [(ngModel)]="selectedCentrali.zone">
+            <select [(ngModel)]="selectedCentrali.zona" title="...">
                 <option value="AST">Astico</option>
                 <option value="AGN">Agno</option>
             </select>
           </div>
-          
+
           <div class="admin-form-input">
             <button (click)="saveCentrali()" class="admin-link">Save</button>
           </div>
         </div>
       </div>
     </div>
-  
+
     <div class="admin-section">
       <h2>Manage Percorsi</h2>
       <div class="admin-form">
@@ -76,27 +76,27 @@
           <input [(ngModel)]="newPercorsi.descrizione" placeholder="Descrizione" />
         </div>
         <div class="admin-form-input">
-          <select [(ngModel)]="newPercorsi.zone">
+          <select [(ngModel)]="newPercorsi.zona" title="...">
             <option value="AST">Astico</option>
             <option value="AGN">Agno</option>
           </select>
         </div>
-        
+
         <div class="admin-form-input">
           <button (click)="addPercorsi()" class="admin-link">Add Percorsi</button>
         </div>
       </div>
-  
+
       <ul class="admin-list">
         <li *ngFor="let percorsi of percorsis">
-          <span>{{percorsi.id}} - {{percorsi.nome}} - {{percorsi.descrizione}} - {{percorsi.zone}}</span>
+          <span>{{percorsi.id}} - {{percorsi.nome}} - {{percorsi.descrizione}} - {{percorsi.zona}}</span>
           <div class="admin-actions">
             <button (click)="editPercorsi(percorsi)" class="admin-link">Edit</button>
             <button (click)="deletePercorsi(percorsi.id)" class="admin-link">Delete</button>
           </div>
         </li>
       </ul>
-  
+
       <div *ngIf="selectedPercorsi" class="admin-form-edit">
         <h3>Edit Percorsi</h3>
         <div class="admin-form">
@@ -110,32 +110,31 @@
             <input [(ngModel)]="selectedPercorsi.descrizione" placeholder="Descrizione" />
           </div>
           <div class="admin-form-input">
-            <select [(ngModel)]="selectedPercorsi.zone">
+            <select [(ngModel)]="selectedPercorsi.zona" title="...">
               <option value="AST">Astico</option>
               <option value="AGN">Agno</option>
             </select>
           </div>
-          
+
           <div class="admin-form-input">
             <button (click)="savePercorsi()" class="admin-link">Save</button>
           </div>
         </div>
       </div>
     </div>
-  
+
     <div class="admin-section">
       <h2>Link Centrali to Percorsi</h2>
       <div class="admin-form">
         <div class="admin-form-input">
-          <select [(ngModel)]="selectedCentraliId">
-            <option *ngFor="let centrali of centralis" [value]="centrali.id">{{centrali.name}}</option>
+          <select [(ngModel)]="selectedCentraliId" title="...">
+            <option *ngFor="let centrali of centralis" [value]="centrali.id">{{centrali.nome}}</option>
           </select>
         </div>
         <div class="admin-form-input">
-          <select [(ngModel)]="selectedPercorsiId">
+          <select [(ngModel)]="selectedPercorsiId" title="...">
             <option *ngFor="let percorsi of percorsis" [value]="percorsi.id">{{percorsi.nome}}</option>
           </select>
           <button (click)="linkCentraliToPercorsi(selectedCentraliId, selectedPercorsiId)">Link</button>
         </div>
     </div>
-  

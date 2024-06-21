@@ -10,8 +10,8 @@
           <input group="x" type="radio"  class="btn-check" name="btnradio" id="astico" (click)="onSelect('AST')" autocomplete="off">
           <label class="btn btn-outline-primary btn-astico btn-custom" for="astico">Astico</label>
       </div>
-      <form class="search-bar d-flex">
-          <input #searchBox class="d-flex flex-grow-1" (input)="search(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
+      <form class="d-flex">
+          <input #searchBox class="search-bar d-flex flex-grow-1" (input)="search(searchBox.value)" type="search" placeholder="Cerca" aria-label="search">
       </form>
   </div>
   <div class="layout-scrollable">

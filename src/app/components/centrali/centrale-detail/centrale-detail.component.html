@@ -1,35 +1,52 @@
-<div class="offset-top flex-center">
-  <div class="row align-items-center">
-      <div class="photo_container col-12 col-md-6">
-          <img class="img-fluid left-aligned" src={{centrale.img[0].url}} alt={{centrale.img[0].alt}}>
+<div class="offset-top">
+  <div class="detail-card">
+    <div class="icon-container w-25 mb-1">
+      <a href="centrali" title="..." class="d-flex flex-row flex-wrap align-items-baseline">
+        <button type="button" class="btn btn-primary"><span style="font-size: 1.3em;">◄</span></button>
+      </a>
+    </div>
+    <div class="detail-header">
+      <img class="main-img" src={{centrale.immagini[0].url}} alt={{centrale.immagini[0].alt}}>
+      <div class="header-description">
+        <h2>{{centrale.nome}}</h2>
+        <p class="text-danger">
+          {{centrale.localita.indirizzo}}
+        </p>
+        <div class="description">
+          <div>
+            <p class="fs-5">{{centrale.descrizione}}</p>
+            <p>Stato centrale:
+              <span *ngIf="centrale.stato === true" class="text-success">attiva</span>
+              <span *ngIf="centrale.stato === false" class="text-danger">inattiva</span>
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="col-12 mt-3">
-          <p>{{ centrale.description }}</p>
+    </div>
+    <!-- CUSTOMIZED PART FOR CENTRALE DETAIL-->
+    <div class="detail-content">
+      <div class="technical-details">
+        <h2>Dettagli tecnici</h2>
+        <table class="table">
+          <tbody *ngFor="let item of centrale.dettagliCentrali">
+            <tr>
+              <td scope="row">{{item.tipo}}</td>
+              <td class="text-end">{{item.valore}} {{item.unitaDiMisura}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-  </div>
-  <div class="row">
-      <div class="second-zone col-12 col-md-6">
-          <div class="table-responsive">
-              <table class="table">
-                  <tbody>
-                      <tr *ngFor="let temp_dettagli of centrale.technical_details">
-                          <th scope="col">{{ temp_dettagli.type }}</th>
-                          <td>{{ temp_dettagli.value }}</td>
-                      </tr>
-                  </tbody>
-              </table>
+      <div class="linked-percorsi" >
+        <h2>Percorsi collegati</h2>
+        <div *ngIf="linkedPercorsi.length===0">
+          <p>Nessun percorso disponibile</p>
+        </div>
+        <div class="row" *ngIf="linkedPercorsi.length">
+          <div class="col-12 col-lg-6" *ngFor="let percorso of linkedPercorsi">
+            <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap h-"></app-percorso-card>
           </div>
-          <div class="btn-container">
-              <h2>Percorsi collegati</h2>
-              <div>
-                  <button class="btn btn-primary mb-2" *ngFor="let trail of centrale.trails">
-                      Percorso {{ trail }}
-                  </button>
-              </div>
-          </div>
-          <div class="img-list-container d-flex flex-wrap">
-              <img class="img-list img-fluid" *ngFor="let img of centrale.img" src={{img.url}} alt={{img.alt}}>
-          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,12 +1,17 @@
 import { DettagliCentrali } from "./dettagli-centrali";
 import { Immagine } from "./immagine";
+import { Localita } from "./localita";
 
 export interface Centrali {
     id:number;
-    name:string;
-    description:string;
-    technical_details:DettagliCentrali[];
-    trails:number[];
-    img:Immagine[];
-    zone:string;
+    zona:string;
+    nome:string;
+    stato: boolean;
+    descrizione:string;
+    localita: Localita;
+    immagini: Immagine[];
+    dettagliCentrali: DettagliCentrali[];
+    percorsi: number[];
+
+
 }

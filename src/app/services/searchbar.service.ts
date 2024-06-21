@@ -34,9 +34,9 @@ export class SearchbarService {
       cnt.forEach(item => {
           let tmpItem : SearchResults = {
             id: item.id,
-            name: item.name,
+            name: item.nome,
             type: "centrale",
-            relatedItems: item.trails
+            relatedItems: item.percorsi
           }
           joinedList.push(tmpItem);
         });

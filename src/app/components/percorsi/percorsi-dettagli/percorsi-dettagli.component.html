@@ -1,41 +1,44 @@
-<div class="container-responsive">
-    <div class="row">
-        <div class="col-12">
-            <h1>{{percorso.nome}}</h1>
-        </div>
+<div class="offset-top">
+  <div class="detail-card">
+    <div class="icon-container w-25 mb-1">
+      <a href="percorsi" title="..." class="d-flex flex-row flex-wrap align-items-baseline">
+        <button type="button" class="btn btn-primary"><span style="font-size: 1.3em;">◄</span></button>
+      </a>
     </div>
-    <div class="row align-items-center">
-        <div class="photo_container col-12 col-md-6">
-            <img class="img-fluid left-aligned" src={{percorso.immagini[0].url}} alt={{percorso.immagini[0].alt}}>
+    <div class="detail-header">
+      <img class="main-img" src={{percorso.immagini[0].url}} alt={{percorso.immagini[0].alt}}>
+      <div class="header-description">
+        <h2>{{percorso.nome}}</h2>
+        <div class="description">
+          <div>
+            <p class="fs-5">{{percorso.descrizione}}</p>
+          </div>
         </div>
-        <div class="col-12 mt-3">
-            <p>{{ percorso.descrizione }}</p>
-        </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="second-zone col-12 col-md-6">
-            <div class="table-responsive">
-                <table class="table"  *ngIf="percorso.percorso">
-                    <tbody>
-                        <tr><th scope="row">ID:</th><td>{{ percorso.percorso.id }}</td></tr>
-                        <tr><th scope="col">KM:</th><td>{{ percorso.percorso.lunghezza}}</td></tr>
-                        <tr><th scope="col">Ore:</th><td>{{ percorso.percorso.durata}}</td></tr>
-                        <tr><th scope="col">Dislivello:</th><td>{{ percorso.percorso.dislivello}}</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="btn-container">
-                <h2>Percorsi collegati</h2>
-                <div>
-                    <button class="btn btn-primary mb-2" *ngFor="let trail of percorso.centrali">
-                        Percorso {{ trail }}
-                    </button>
-                </div>
-            </div>
-            <div class="img-list-container d-flex flex-wrap">
-                <img class="img-list img-fluid" *ngFor="let img of percorso.immagini" src={{img.url}} alt={{img.alt}}>
-            </div>
-        </div>
+    <!-- CUSTOMIZED PART FOR CENTRALE DETAIL-->
+    <div class="detail-content">
+      <div class="technical-details">
+        <h2>Dettagli percorso</h2>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td scope="row">Lunghezza: </td>
+              <td class="text-end">{{percorso.dettagliPercorsi.lunghezza}}</td>
+            </tr>
+            <tr>
+              <td scope="row">Durata: </td>
+              <td class="text-end">{{percorso.dettagliPercorsi.durata}}</td>
+            </tr>
+            <tr>
+              <td scope="row">Dislivello: </td>
+              <td class="text-end">{{percorso.dettagliPercorsi.dislivello}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="oa-embed">
+      </div>
     </div>
+  </div>
 </div>
-

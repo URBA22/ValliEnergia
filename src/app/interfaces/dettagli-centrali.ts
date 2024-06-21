@@ -1,5 +1,6 @@
 export interface DettagliCentrali {
-    id:number;
-    type:string;
-    value:number;
+    id: number;
+    tipo: string;
+    valore: string;
+    unitaDiMisura: string;
 }
