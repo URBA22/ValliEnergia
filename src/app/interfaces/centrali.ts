@@ -6,6 +6,7 @@ export interface Centrali {
     id:number;
     zona:string;
     nome:string;
+    stato: boolean;
     descrizione:string;
     localita: Localita;
     immagini: Immagine[];

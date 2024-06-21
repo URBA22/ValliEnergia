@@ -21,7 +21,7 @@ export class AdminComponent {
   centralis: Centrali[] = [];
   percorsis: Percorsi[] = [];
 
-  newCentrali: Centrali = { id: 0, nome: '', descrizione: '', localita: {} as Localita, dettagliCentrali: [], percorsi: [], immagini: [], zona: 'AST' };
+  newCentrali: Centrali = { id: 0, nome: '', descrizione: '', localita: {} as Localita, dettagliCentrali: [], percorsi: [], immagini: [], zona: 'AST', stato: Boolean()};
   newPercorsi: Percorsi = { id: 0, nome: '', descrizione: '', dettagliPercorsi: {} as DettagliPercorso, centrali: [], immagini: [], zona: 'AST' };
 
   selectedCentrali: Centrali | null = null;
@@ -54,7 +54,7 @@ export class AdminComponent {
   addCentrali() {
     if (this.newCentrali.id && this.newCentrali.nome && this.newCentrali.descrizione) {
       this.centralis.push({ ...this.newCentrali });
-      this.newCentrali = { id: 0, nome: '', descrizione: '', localita: {} as Localita, dettagliCentrali: [], percorsi: [], immagini: [], zona: 'AST' };
+      this.newCentrali = { id: 0, nome: '', descrizione: '', localita: {} as Localita, dettagliCentrali: [], percorsi: [], immagini: [], zona: 'AST', stato: Boolean() };
     }
   }
 
