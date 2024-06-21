@@ -1,6 +1,8 @@
 export interface DettagliPercorso {
-    id:string;
-    lunghezza:number;
-    durata:number;
-    dislivello:number;
+    oaUrl: string;
+    lunghezza: number;
+    durata: number;
+    dislivello: number;
+    puntoAlto: number;
+    puntoBasso: number;
 }
