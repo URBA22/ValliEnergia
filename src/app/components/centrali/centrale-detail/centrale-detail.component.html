@@ -6,15 +6,15 @@
       </a>
     </div>
     <div class="detail-header">
-      <img class="main-img" src={{centrale.img[0].url}} alt={{centrale.img[0].alt}}>
+      <img class="main-img" src={{centrale.immagini[0].url}} alt={{centrale.immagini[0].alt}}>
       <div class="header-description">
-        <h2>{{centrale.name}}</h2>
+        <h2>{{centrale.nome}}</h2>
         <p class="text-danger">
           placeholder per inserire indirizzo
         </p>
         <div class="description">
           <div>
-            <p class="fs-5">{{centrale.description}}</p>
+            <p class="fs-5">{{centrale.descrizione}}</p>
           </div>
         </div>
       </div>
@@ -24,10 +24,10 @@
       <div class="technical-details">
         <h2>Dettagli tecnici</h2>
         <table class="table">
-          <tbody *ngFor="let item of centrale.technical_details">
+          <tbody *ngFor="let item of centrale.dettagliCentrali">
             <tr>
-              <td scope="row">{{item.type}}</td>
-              <td class="text-end">{{item.value}}</td>
+              <td scope="row">{{item.tipo}}</td>
+              <td class="text-end">{{item.valore}}{{item.unitaDiMisura}}</td>
             </tr>
           </tbody>
         </table>

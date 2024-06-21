@@ -8,6 +8,7 @@ import { DettagliPercorso } from '../../interfaces/dettagli-percorso';
 import { Immagine } from '../../interfaces/immagine';
 import { PercorsiService } from '../../services/percorsi.service';
 import { CentraliService } from '../../services/centrali.service';
+import { Localita } from '../../interfaces/localita';
 
 @Component({
   selector: 'app-admin',
@@ -19,10 +20,10 @@ import { CentraliService } from '../../services/centrali.service';
 export class AdminComponent {
   centralis: Centrali[] = [];
   percorsis: Percorsi[] = [];
-  
-  newCentrali: Centrali = { id: 0, name: '', description: '', technical_details: [], trails: [], img: [], zone: 'AST' };
-  newPercorsi: Percorsi = { id: 0, nome: '', descrizione: '', percorso: {} as DettagliPercorso, centrali: [], immagini: [], zone: 'AST' };
-  
+
+  newCentrali: Centrali = { id: 0, nome: '', descrizione: '', localita: {} as Localita, dettagliCentrali: [], percorsi: [], immagini: [], zona: 'AST' };
+  newPercorsi: Percorsi = { id: 0, nome: '', descrizione: '', dettagliPercorsi: {} as DettagliPercorso, centrali: [], immagini: [], zona: 'AST' };
+
   selectedCentrali: Centrali | null = null;
   selectedPercorsi: Percorsi | null = null;
   selectedCentraliId: number | null = null;
@@ -51,9 +52,9 @@ export class AdminComponent {
   }
 
   addCentrali() {
-    if (this.newCentrali.id && this.newCentrali.name && this.newCentrali.description) {
+    if (this.newCentrali.id && this.newCentrali.nome && this.newCentrali.descrizione) {
       this.centralis.push({ ...this.newCentrali });
-      this.newCentrali = { id: 0, name: '', description: '', technical_details: [], trails: [], img: [], zone: 'AST' };
+      this.newCentrali = { id: 0, nome: '', descrizione: '', localita: {} as Localita, dettagliCentrali: [], percorsi: [], immagini: [], zona: 'AST' };
     }
   }
 
@@ -78,7 +79,7 @@ export class AdminComponent {
   addPercorsi() {
     if (this.newPercorsi.id && this.newPercorsi.nome && this.newPercorsi.descrizione) {
       this.percorsis.push({ ...this.newPercorsi });
-      this.newPercorsi = { id: 0, nome: '', descrizione: '', percorso: {} as DettagliPercorso, centrali: [], immagini: [], zone: 'AST' };
+      this.newPercorsi = { id: 0, nome: '', descrizione: '', dettagliPercorsi: {} as DettagliPercorso, centrali: [], immagini: [], zona: 'AST' };
     }
   }
 
@@ -104,7 +105,7 @@ export class AdminComponent {
     if (centraliId !== null && percorsiId !== null) {
       const centrali = this.centralis.find(c => c.id === centraliId);
       if (centrali) {
-        centrali.trails.push(percorsiId);
+        centrali.percorsi.push(percorsiId);
         const percorsi = this.percorsis.find(p => p.id === percorsiId);
         if (percorsi) {
           percorsi.centrali.push(centraliId);

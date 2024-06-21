@@ -58,7 +58,7 @@ export class CentraliComponent implements OnInit {
     let term = this.searchParam.toLowerCase().trim();
     this.centraliFiltered=[];
     this.centraliListDefinitive.forEach(tempCentrali=>{
-      if(tempCentrali.name.toLowerCase().trim().includes(term) && (this.filterParam === "ALL" || this.filterParam === tempCentrali.zone))
+      if(tempCentrali.nome.toLowerCase().trim().includes(term) && (this.filterParam === "ALL" || this.filterParam === tempCentrali.zona))
         {
           this.centraliFiltered.push(tempCentrali);
       }

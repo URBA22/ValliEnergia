@@ -46,7 +46,7 @@ export class PercorsiDettagliComponent implements OnInit {
     let scriptDivRef = document.getElementById('oa-embed');
     let script = document.createElement('script');
     script.type = `text/javascript`;
-    script.src= this.percorso.percorso.id;
+    script.src= this.percorso.dettagliPercorsi.oaUrl;
 
     scriptDivRef!.appendChild(script);
   }

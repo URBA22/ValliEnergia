@@ -55,7 +55,7 @@ export class PercorsiComponent implements OnInit{
     let term = this.searchParam.toLowerCase().trim();
     this.percorsiFiltered=[];
     this.percorsiListDefinitive.forEach(tempPercorsi=>{
-      if(tempPercorsi.nome.toLowerCase().trim().includes(term) && (this.filterParam === "ALL" || this.filterParam === tempPercorsi.zone))
+      if(tempPercorsi.nome.toLowerCase().trim().includes(term) && (this.filterParam === "ALL" || this.filterParam === tempPercorsi.zona))
         {
           this.percorsiFiltered.push(tempPercorsi);
         }
