@@ -10,7 +10,7 @@
       <div class="header-description">
         <h2>{{centrale.nome}}</h2>
         <p class="text-danger">
-          placeholder per inserire indirizzo
+          {{centrale.localita.indirizzo}}
         </p>
         <div class="description">
           <div>
@@ -27,7 +27,7 @@
           <tbody *ngFor="let item of centrale.dettagliCentrali">
             <tr>
               <td scope="row">{{item.tipo}}</td>
-              <td class="text-end">{{item.valore}}{{item.unitaDiMisura}}</td>
+              <td class="text-end">{{item.valore}} {{item.unitaDiMisura}}</td>
             </tr>
           </tbody>
         </table>

@@ -1,4 +1,4 @@
 export interface Localita{
-  via: string;
+  indirizzo: string;
   coordinate: number[];
 }
