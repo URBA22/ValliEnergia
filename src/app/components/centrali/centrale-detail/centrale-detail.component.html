@@ -9,9 +9,11 @@
       <img class="main-img" src={{centrale.immagini[0].url}} alt={{centrale.immagini[0].alt}}>
       <div class="header-description">
         <h2>{{centrale.nome}}</h2>
-        <p class="text-danger">
-          {{centrale.localita.indirizzo}}
-        </p>
+        <a href="https://www.openstreetmap.org/#map=16/{{centrale.localita.coordinate[0]}}/{{centrale.localita.coordinate[1]}}&layers=P" class="text-danger fs-3 text-decoration-none">
+          <p>
+            {{centrale.localita.indirizzo}} <span class="">&#10172;</span>
+          </p>
+        </a>
         <div class="description">
           <div>
             <p class="fs-5">{{centrale.descrizione}}</p>
