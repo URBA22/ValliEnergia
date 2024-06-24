@@ -24,15 +24,23 @@
           <tbody>
             <tr>
               <td scope="row">Lunghezza: </td>
-              <td class="text-end">{{percorso.dettagliPercorsi.lunghezza}}</td>
+              <td class="text-end">{{percorso.dettagliPercorsi.lunghezza}} KM</td>
             </tr>
             <tr>
               <td scope="row">Durata: </td>
-              <td class="text-end">{{percorso.dettagliPercorsi.durata}}</td>
+              <td class="text-end">{{percorso.dettagliPercorsi.durata}} minuti</td>
             </tr>
             <tr>
               <td scope="row">Dislivello: </td>
-              <td class="text-end">{{percorso.dettagliPercorsi.dislivello}}</td>
+              <td class="text-end">↕ {{percorso.dettagliPercorsi.dislivello}} metri</td>
+            </tr>
+            <tr>
+              <td scope="row">Punto più alto: </td>
+              <td class="text-end">▲ {{percorso.dettagliPercorsi.puntoAlto}} metri</td>
+            </tr>
+            <tr>
+              <td scope="row">Punto più basso: </td>
+              <td class="text-end">▼ {{percorso.dettagliPercorsi.puntoBasso}} metri</td>
             </tr>
           </tbody>
         </table>

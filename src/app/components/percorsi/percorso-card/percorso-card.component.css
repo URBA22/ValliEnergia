@@ -4,7 +4,7 @@
   border-radius: 15px;
   justify-content:flex-start;
   width: 90vw;
-  max-height: 60vh;
+  max-height: 90vh;
   margin-bottom: 2rem;
   background-color: rgb(212, 255, 233);
   color: black;
@@ -21,7 +21,8 @@
 .img-container{
   display: flex;
   object-fit: fill;
-  height: 45%;
+  height: 30rem;
+  max-height: 40%;
   >img{
     width: 100%;
   }
@@ -70,4 +71,7 @@
   100%{top: 0%; scale: 2}
 }
 
+.icon-container{
+  margin-right: 1rem;
+}
 

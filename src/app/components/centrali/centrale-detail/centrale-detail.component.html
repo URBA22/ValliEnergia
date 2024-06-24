@@ -9,9 +9,11 @@
       <img class="main-img" src={{centrale.immagini[0].url}} alt={{centrale.immagini[0].alt}}>
       <div class="header-description">
         <h2>{{centrale.nome}}</h2>
-        <p class="text-danger">
-          {{centrale.localita.indirizzo}}
-        </p>
+        <a href="https://www.openstreetmap.org/#map=16/{{centrale.localita.coordinate[0]}}/{{centrale.localita.coordinate[1]}}&layers=P" rel="noOpener" class="text-danger fs-3 text-decoration-none" target="_blank">
+          <p>
+            {{centrale.localita.indirizzo}} <span class="">&#10172;</span>
+          </p>
+        </a>
         <div class="description">
           <div>
             <p class="fs-5">{{centrale.descrizione}}</p>
@@ -27,14 +29,15 @@
     <div class="detail-content">
       <div class="technical-details">
         <h2>Dettagli tecnici</h2>
-        <table class="table">
+        <table class="table" *ngIf="centrale.dettagliCentrali">
           <tbody *ngFor="let item of centrale.dettagliCentrali">
-            <tr>
+            <tr *ngIf="item.valore">
               <td scope="row">{{item.tipo}}</td>
               <td class="text-end">{{item.valore}} {{item.unitaDiMisura}}</td>
             </tr>
           </tbody>
         </table>
+        <p *ngIf="centrale.dettagliCentrali.length===0">Dettagli centrale non disponibili</p>
       </div>
       <div class="linked-percorsi" >
         <h2>Percorsi collegati</h2>
