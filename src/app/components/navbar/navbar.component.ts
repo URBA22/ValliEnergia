@@ -35,12 +35,31 @@ export class NavbarComponent{
   }
 
   filterByTerm = (term: string) => {
+    let termParsed = term.trim().toLowerCase();
     this.filteredList = [];
-    this.fetchedList.forEach(e => {
-      if(e.name.toLowerCase().includes(term.trim()) || e.type.toLowerCase().includes(term.trim())){
-        this.filteredList.push(e);
-      }
-    });
+    if(termParsed.includes("perc" || "percorso" || "percorsi" || "sent" || "sentieri" || "sentiero")){
+      this.fetchedList.forEach(item => {
+        if(item.type === "percorso"){
+          this.filteredList.push(item);
+        }
+      });
+    }
+    else if(termParsed.includes("cent" || "centrale" || "centrali")){
+      this.fetchedList.forEach(item => {
+        if(item.type === "centrale"){
+          this.filteredList.push(item);
+        }
+      });
+    }
+    else{
+      this.fetchedList.forEach(e => {
+        if(e.name.toLowerCase().includes(termParsed)){
+          this.filteredList.push(e);
+        }
+      });
+    }
+
+
   }
 
   //!DO NOT MODIFY
@@ -55,19 +74,5 @@ export class NavbarComponent{
           navEl.classList.remove('navbar-scrolled');
         }
       });
-  };
-
-  /**
-   * Changes blur to the body of the page on input in searchBox
-  */
-  onInput(){
-    const bodyEl = document.querySelector('.second') as HTMLElement;
-    const resultboxEl = document.querySelector('.result-box') as HTMLElement;
-
-    if(resultboxEl){
-      bodyEl.style.filter = 'blur(0.04em)';
-    }else{
-      bodyEl.style.filter = 'blur(0px)';
-    }
   };
 }

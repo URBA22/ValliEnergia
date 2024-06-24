@@ -23,7 +23,7 @@
           routerLink="/percorsi" routerLinkActive="linkactive">Percorsi</button>
         </li>
       <form class="d-flex">
-        <input #searchBar class="form-control form-control-custom" type="search" placeholder="Cerca" aria-label="search" (input)="onSearch(searchBar.value)" (input)="onInput()">
+        <input #searchBar class="form-control form-control-custom" type="search" placeholder="Cerca" aria-label="search" (input)="onSearch(searchBar.value)">
       </form>
       </ul>
       <div *ngIf="searchBar.value" class="result-box d-flex flex-column">
