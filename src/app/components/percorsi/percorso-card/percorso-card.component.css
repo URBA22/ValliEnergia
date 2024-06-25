@@ -1,17 +1,19 @@
 .card-container{
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
-  justify-content:flex-start;
+  border-radius: 10px;
+  border: 1px solid rgba(186, 186, 186, 0.601);
+  justify-content:space-between;
   width: 90vw;
-  max-height: 90vh;
-  margin-bottom: 2rem;
-  background-color: rgb(212, 255, 233);
+  height: 100%;
+  margin-bottom: 3rem;
+  background-color: transparent;
   color: black;
   overflow: hidden;
   transition: transform .3s;
   @media(max-width: 767px){
     width: 85vw;
+    margin-bottom: 1rem;
   }
 }
 .card-container:hover{
@@ -20,36 +22,41 @@
 
 .img-container{
   display: flex;
-  object-fit: fill;
-  height: 30rem;
-  max-height: 40%;
+  justify-content: center;
+  height: 15rem;
+  overflow-y:hidden;
   >img{
+    border-radius: 10px;
     width: 100%;
+    object-fit: cover;
   }
 }
 .card-content{
-  height: 45%;
   word-break: break-word;
   hyphens: auto;
   width: 100%;
   display: inline-flex;
   flex-flow: wrap column;
-  padding: 0.2rem 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+  text-align: center;
   >h2{
     font-size: x-large;
   }
   >p{
+    color: rgba(150, 150, 150);
     line-height: 1;
-    font-size: 1.3em;
+    font-size: 1.2em;
     @media(max-width: 767px){
-      font-size: 1.2em;
+      font-size: 1.1em;
       line-height: 1;
     }
   }
 }
+
 .card-footer{
-  height: 10%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 /*** Handles icon animation on hover ***/
@@ -74,4 +81,3 @@
 .icon-container{
   margin-right: 1rem;
 }
-
