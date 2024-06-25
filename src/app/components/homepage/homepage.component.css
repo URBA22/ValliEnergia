@@ -3,7 +3,11 @@
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size:cover;
+  background-size: cover;
+  height: 100vh;
+  @media(max-width: 767px){
+    height: 100%;
+  }
 }
 
 /*superimposing padding in this component to avoid forcibly offsetting background image*/
