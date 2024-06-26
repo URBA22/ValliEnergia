@@ -17,8 +17,8 @@
     </div>
     <div class="layout-scrollable">
         <div class="row" *ngIf="percorsiFiltered.length > 0">
-            <div class="col-12 col-lg-4" *ngFor="let percorso of percorsiFiltered" >
-                <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap h-100 m-3"></app-percorso-card>
+            <div class="col-12 col-lg-4 mb-3" *ngFor="let percorso of percorsiFiltered" >
+                <app-percorso-card [perc]="percorso" class="d-flex flex-row flex-wrap h-100 ms-4 me-4"></app-percorso-card>
             </div>
         </div>
         <div class="row" *ngIf="percorsiFiltered.length === 0">

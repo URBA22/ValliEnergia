@@ -1,11 +1,13 @@
 <div class="card-container">
-  <div class="img-container"><!-- height 45%-->
-    <img src="{{cent.immagini[0].url}}" alt=""/>
-  </div>
-  <div class="card-content h-100"> <!-- height 45%-->
-    <h2>{{cent.nome}}</h2>
-    <p>{{cent.descrizione}}</p>
-  </div>
+  <a href="centrali/{{cent.id}}" class="align-items-center" style="text-decoration: none; color:black">
+    <div class="img-container"><!-- height 45%-->
+      <img src="{{cent.immagini[0].url}}" alt=""/>
+    </div>
+    <div class="card-content"> <!-- height 45%-->
+      <h2>{{cent.nome}}</h2>
+      <p>{{cent.localita.indirizzo}}</p>
+    </div>
+  </a>
   <div class="card-footer d-flex justify-content-center"><!-- height 10%-->
     <div class="icon-container">
       <a href="centrali/{{cent.id}}" class="align-items-center" style="text-decoration: none; color:black">
