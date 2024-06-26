@@ -6,14 +6,23 @@
       <li>maybe istruzioni?</li>
     </ul>
 
-    <form>
+    <form #reqForm="ngForm" (ngSubmit)="onSubmit(reqForm)">
       Dove si trova questo percorso?<br>
-      <input type="radio" id="agno" name="posizione" value="AGN">
-      <label for="agno">Valle dell'Agno</label><br>
-      <input type="radio" id="astico" name="posizione" value="AST">
-      <label for="astico">Valle dell'Astico</label><br>
-
-
+      <div class="form-group">
+        <select title="zone" class="form-control w-25" [(ngModel)]="tmpForm.zona" name="zona">
+          <option value="AGN">Valle dell'Agno</option>
+          <option value="AST">Valle dell'Astico</option>
+        </select>
+        <label for="oaUrl"><p class="mb-0">Incolla qui il link al percorso di OutdoorActive (il percorso deve essere pubblico)</p></label><br>
+        <input title="oaUrl" class="w-100 rounded border-0" [(ngModel)]="tmpForm.oaUrl" name="oaUrl" required><br>
+        <label for="messaggio">Scrivi qui un breve messaggio descrittivo sul perché vorresti vedere il percorso aggiunto al nostro sito web</label><br>
+        <input title="messaggio" class="w-100 h-25 rounded border-0" [(ngModel)]="tmpForm.messaggio" name="messaggio" required><br>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="img">Upload</label>
+          <input type="file" class="form-control" id="img" (change)="onFileChange($event)">
+        </div>
+      </div><br>
+      <button type="submit">Submit</button>
     </form>
   </div>
 </div>
