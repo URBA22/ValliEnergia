@@ -6,7 +6,12 @@
       </a>
     </div>
     <div class="detail-header">
-      <img class="main-img" src={{percorso.immagini[0].url}} alt={{percorso.immagini[0].alt}}>
+      <div *ngIf="percorso.immagini[0].url.length>0">
+        <img class="main-img" src={{percorso.immagini[0].url}} alt={{percorso.immagini[0].alt}}>
+      </div>
+      <div *ngIf="percorso.immagini[0].url.length == 0">
+        <img class="main-img" src="../../../../assets/default-trail.jpg" alt={{percorso.immagini[0].alt}}>
+      </div>
       <div class="header-description">
         <h2>{{percorso.nome}}</h2>
         <div class="description">

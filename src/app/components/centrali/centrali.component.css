@@ -1,3 +1,5 @@
+/* Searchbar and button custom CSS ruleset - START*/
+
 .btn-group-custom{
   margin-left: 0.4rem;
   margin-right: 0.4rem;
@@ -10,25 +12,77 @@
   }
 }
 
+/* Custom button styles */
+.btn-custom {
+  border-color: #6c757d; /* Customize border color */
+  color: #6c757d;       /* Customize text color */
+}
+
+/* Change background and border color on hover */
+#tutti + .btn-custom:hover {
+  background-color: #B31B32;
+  border-color: #B31B32;
+  color: #fff;
+}
+#agno + .btn-custom:hover {
+  background-color: #1B32B3;
+  border-color: #1B32B3;
+  color: #fff;
+}
+#astico + .btn-custom:hover {
+  background-color: #31B31A;
+  border-color: #31B31A;
+  color: #fff;
+}
+
+.btn-check:checked + .btn-custom{
+box-shadow: none;
+color: #fff;
+}
+
+#tutti.btn-check:checked + .btn-custom {
+  background-color: #B31B32;
+  border-color: #B31B32;
+}
+#agno.btn-check:checked + .btn-custom {
+  background-color: #1B32B3;
+  border-color: #1B32B3;
+}
+#astico.btn-check:checked + .btn-custom {
+  background-color: #31B31A;
+  border-color: #31B31A;
+}
+
 .sticky-buttons{
   z-index: 1;
-  position: fixed;
+  position: sticky;
   top: 6rem;
   background-color: rgb(242, 242, 242);
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .search-bar{
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid rgb(50, 50, 50, 0.7);
   margin: 0.4rem;
   width: 30rem;
+  outline: none;
   @media (max-width: 767px){
     width: 95vw;
     margin: 0.5rem 1rem;
   }
 }
+.search-bar:focus{
+  border-bottom: 2px solid rgb(50, 50, 50, 0.9);
+}
+
+/* Searchbar and button custom CSS ruleset - END*/
+
+/* Layout customization ruleset - START */
 
 .layout-scrollable{
   overflow-x: hidden;
@@ -50,10 +104,6 @@
   display: none; /* Chrome and Safari */
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
-
-.btn-custom{
-  background-color: white;
 }
 
 .container-responsive{

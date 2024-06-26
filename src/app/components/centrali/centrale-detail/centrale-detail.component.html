@@ -6,7 +6,12 @@
       </a>
     </div>
     <div class="detail-header">
-      <img class="main-img" src={{centrale.immagini[0].url}} alt={{centrale.immagini[0].alt}}>
+      <div *ngIf="centrale.immagini[0].url.length>0">
+        <img class="main-img" src={{centrale.immagini[0].url}} alt={{centrale.immagini[0].alt}}>
+      </div>
+      <div *ngIf="centrale.immagini[0].url.length == 0"><!-- height 45%-->
+        <img class="main-img" src="../../../../assets/default-plant.jpg" alt=""/>
+      </div>
       <div class="header-description">
         <h2>{{centrale.nome}}</h2>
         <a href="https://www.openstreetmap.org/?mlat={{centrale.localita.coordinate[0]}}&mlon={{centrale.localita.coordinate[1]}}#map=17/{{centrale.localita.coordinate[0]}}/{{centrale.localita.coordinate[1]}}&layers=P" rel="noOpener" class="text-danger fs-3 text-decoration-none" target="_blank">

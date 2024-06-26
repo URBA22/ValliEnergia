@@ -6,6 +6,7 @@ import { Subscriber } from 'rxjs';
 import { AppRoutingModule } from '../../../app.routes';
 import { RouterLink, RouterModule } from '@angular/router';
 import { DataTransferServiceService } from '../../../services/data-transfer-service.service';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-centrale-card',
@@ -13,18 +14,19 @@ import { DataTransferServiceService } from '../../../services/data-transfer-serv
   imports: [
     RouterLink,
     RouterModule,
+    NgIf
   ],
   templateUrl: './centrale-card.component.html',
   styleUrl: './centrale-card.component.css'
 })
 export class CentraleCardComponent{
-  
+
   constructor(private dataTransferService:DataTransferServiceService){}
- 
+
   @Input() cent!: Centrali;
   setCentrale(centrali: Centrali): void {
     this.dataTransferService.SetCentrale(centrali);
   }
 }
-  
+
 
