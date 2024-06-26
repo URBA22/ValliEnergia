@@ -10,6 +10,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav ms-auto mb-lg-0 btngroup-custom-mobile">
+        <li class="nav-item" *ngIf="router.url === '/percorsi'">
+          <button type="button" class="btn btn-primary btn-custom "
+          routerLink="/richiedi">Richiedi un percorso qui</button>
+        </li>
         <li class="nav-item">
           <button type="button" class="btn btn-primary btn-homepage btn-custom"
           routerLink="/home" routerLinkActive="linkactive">Homepage</button>
