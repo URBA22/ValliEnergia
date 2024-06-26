@@ -8,10 +8,50 @@
     width: 95vw;
   }
   >label:active{
-    color: grey;
+    color: white;
   }
 }
 
+/* Custom button styles */
+.btn-custom {
+  border-color: #6c757d; /* Customize border color */
+  color: #6c757d;       /* Customize text color */
+}
+
+/* Change background and border color on hover */
+#tutti + .btn-custom:hover {
+  background-color: #B31B32;
+  border-color: #B31B32;
+  color: #fff;
+}
+#agno + .btn-custom:hover {
+  background-color: #1B32B3;
+  border-color: #1B32B3;
+  color: #fff;
+}
+#astico + .btn-custom:hover {
+  background-color: #31B31A;
+  border-color: #31B31A;
+  color: #fff;
+}
+
+.btn-check:checked + .btn-custom{
+box-shadow: none;
+color: #fff;
+}
+
+#tutti.btn-check:checked + .btn-custom {
+  background-color: #B31B32;
+  border-color: #B31B32;
+}
+#agno.btn-check:checked + .btn-custom {
+  background-color: #1B32B3;
+  border-color: #1B32B3;
+}
+#astico.btn-check:checked + .btn-custom {
+  background-color: #31B31A;
+  border-color: #31B31A;
+}
 
 .sticky-buttons{
   z-index: 1;
