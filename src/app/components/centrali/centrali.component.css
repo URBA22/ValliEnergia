@@ -1,3 +1,5 @@
+/* Searchbar and button custom CSS ruleset - START*/
+
 .btn-group-custom{
   margin-left: 0.4rem;
   margin-right: 0.4rem;
@@ -6,9 +8,10 @@
     width: 95vw;
   }
   >label:active{
-    color: white;
+    color: grey;
   }
 }
+
 
 .sticky-buttons{
   z-index: 1;
@@ -25,13 +28,24 @@
 }
 
 .search-bar{
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid rgb(50, 50, 50, 0.7);
   margin: 0.4rem;
   width: 30rem;
+  outline: none;
   @media (max-width: 767px){
     width: 95vw;
     margin: 0.5rem 1rem;
   }
 }
+.search-bar:focus{
+  border-bottom: 2px solid rgb(50, 50, 50, 0.9);
+}
+
+/* Searchbar and button custom CSS ruleset - END*/
+
+/* Layout customization ruleset - START */
 
 .layout-scrollable{
   overflow-x: hidden;
@@ -53,10 +67,6 @@
   display: none; /* Chrome and Safari */
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
-
-.btn-custom{
-  background-color: white;
 }
 
 .container-responsive{

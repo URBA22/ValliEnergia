@@ -25,6 +25,8 @@
 }
 
 .search-bar{
+  border-radius: 3px;
+  border: 1px solid rgb(146, 160, 123);
   margin: 0.4rem;
   width: 30rem;
   @media (max-width: 767px){
