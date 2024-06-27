@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { response } from 'express';
-import { Observable } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +8,9 @@ import { Observable } from 'rxjs';
 export class FormrequestService {
   constructor(private http: HttpClient) { }
 
-  submitForm(form: FormData){
-    return this.http.post("http://192.168.123.24:3000/form", form).subscribe(response => alert("OK"), error => alert("KO"));
+  submitForm(form : NgForm){
+    const headers = new HttpHeaders().set('Content-type', 'application/json; charset=utf-8');
+    let payload = JSON.stringify(form);
+    return this.http.post("http://localhost:5000/api/FormReq", payload, {headers: headers}).subscribe(response => alert("OK"), error => alert("KO"));
   }
 }
