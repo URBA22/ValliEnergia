@@ -18,26 +18,22 @@ export class RequestformComponent {
   tmpForm = {
     zona: 'AGN',
     oaUrl: '',
-    messaggio: '',
-    img: null as File | null
+    messaggio: ''
   }
-
+/*
   onFileChange(event: Event) {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length) {
       this.tmpForm.img = input.files[0];
     }
   }
-
+*/
   onSubmit(form: NgForm){
     if(form.valid){
       const formData = new FormData();
       formData.append('zona', this.tmpForm.zona);
       formData.append('oaUrl', this.tmpForm.oaUrl);
       formData.append('messaggio', this.tmpForm.messaggio);
-      if (this.tmpForm.img) {
-        formData.append('img', this.tmpForm.img);
-      }
       this.formSrv.submitForm(formData);
     }
     else{
