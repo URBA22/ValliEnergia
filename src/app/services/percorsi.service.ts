@@ -9,7 +9,7 @@ import { Percorsi } from '../interfaces/percorsi';
 export class PercorsiService {
 
   constructor(private http:HttpClient) { }
-  private percorsiUrl = "http://192.168.123.24:3000/percorsi";
+  private percorsiUrl = "http://localhost:5000/api/Percorsi";
 
   fetchPercorsi():Observable<Percorsi[]>{
     return this.http.get<Percorsi[]>(this.percorsiUrl);
