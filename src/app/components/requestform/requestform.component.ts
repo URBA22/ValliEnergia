@@ -21,13 +21,12 @@ export class RequestformComponent {
     messaggio: ''
   }
 
-  onSubmit(form: NgForm){
+  onSubmit(form: any){
     if(form.valid){
-      alert(JSON.stringify(form));
-      return this.formSrv.submitForm(form);
+      this.formSrv.submitForm(this.tmpForm);
     }
     else{
-      return alert("Form is invalid");
+      alert("Form is invalid");
     }
   }
 }
