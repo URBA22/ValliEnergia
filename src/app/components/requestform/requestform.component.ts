@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { FormrequestService } from '../../services/formrequest.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-requestform',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   templateUrl: './requestform.component.html',
   styleUrl: './requestform.component.css'
@@ -24,9 +26,6 @@ export class RequestformComponent {
   onSubmit(form: any){
     if(form.valid){
       this.formSrv.submitForm(this.tmpForm);
-    }
-    else{
-      alert("Form is invalid");
     }
   }
 }

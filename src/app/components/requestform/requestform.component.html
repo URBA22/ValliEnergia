@@ -7,16 +7,50 @@
     </ul>
 
     <form #reqForm="ngForm" (ngSubmit)="onSubmit(reqForm)">
-      Dove si trova questo percorso?<br>
+      <p class="fw-bold mb-0">Dove si trova questo percorso?</p>
       <div class="form-group">
-        <select title="zone" class="form-control w-25" [(ngModel)]="tmpForm.zona" name="zona">
-          <option value="AGN">Valle dell'Agno</option>
-          <option value="AST">Valle dell'Astico</option>
-        </select>
-        <label for="oaUrl"><p class="mb-0">Incolla qui il link al percorso di OutdoorActive (il percorso deve essere pubblico)</p></label><br>
-        <input title="oaUrl" class="w-100 rounded border-0" [(ngModel)]="tmpForm.oaUrl" name="oaUrl" required><br>
-        <label for="messaggio">Scrivi qui un breve messaggio descrittivo sul perché vorresti vedere il percorso aggiunto al nostro sito web</label><br>
-        <input title="messaggio" class="w-100 h-25 rounded border-0" [(ngModel)]="tmpForm.messaggio" name="messaggio" required><br>
+        <div class="mb-3">
+          <select title="zone" class="form-control w-25" [(ngModel)]="tmpForm.zona" name="zona">
+            <option value="AGN">Valle dell'Agno</option>
+            <option value="AST">Valle dell'Astico</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="oaUrl"><p class="mb-0 fw-bold">Incolla qui il link al percorso di OutdoorActive (il percorso deve essere pubblico)</p></label><br>
+          <p class="mb-0 text-secondary fst-italic">Esempio di link corretto: https://www.outdooractive.com/it/route/escursione/posizione/nome/id numerico/</p>
+          <input
+            title="oaUrl"
+            class="w-100 rounded border-0"
+            [(ngModel)]="tmpForm.oaUrl"
+            name="oaUrl"
+            required
+            #oaUrl="ngModel"
+            pattern="^https:\/\/www\.outdooractive\.com\/[A-Za-z][A-Za-z]\/route\/escursione\/.+\/.+\/[0-9]+\/.*$"><br>
+            <div *ngIf="oaUrl.errors?.['pattern'] && reqForm.submitted">
+              Il link ad outdooractive deve essere come segue: https://www.outdooractive.com/it/route/escursione/posizione/nome/id numerico/
+            </div>
+            <div *ngIf="oaUrl.errors?.['required'] && reqForm.submitted">
+              Il link al percorso è obbligatorio!
+            </div>
+        </div>
+        <div class="">
+          <label for="messaggio">Scrivi qui un breve messaggio descrittivo sul perché vorresti vedere il percorso aggiunto al nostro sito web</label><br>
+          <input
+            title="messaggio"
+            class="w-100 h-25 rounded border-0"
+            [(ngModel)]="tmpForm.messaggio"
+            name="messaggio"
+            required
+            minlength="150"
+            placeholder="Min. 100 caratteri"
+            #messaggio="ngModel"><br>
+            <div *ngIf="messaggio.errors?.['required'] && reqForm.submitted">
+              Il messaggio è obbligatorio.
+            </div>
+            <div *ngIf="messaggio.errors?.['minlength'] && reqForm.submitted">
+              Il messaggio dev'essere lungo almeno 100 caratteri.
+            </div>
+        </div>
       </div><br>
       <button type="submit">Submit</button>
     </form>
