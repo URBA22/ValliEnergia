@@ -42,13 +42,13 @@
             name="messaggio"
             required
             minlength="150"
-            placeholder="Min. 100 caratteri"
+            placeholder="Min. 150 caratteri"
             #messaggio="ngModel"><br>
             <div *ngIf="messaggio.errors?.['required'] && reqForm.submitted">
               Il messaggio è obbligatorio.
             </div>
             <div *ngIf="messaggio.errors?.['minlength'] && reqForm.submitted">
-              Il messaggio dev'essere lungo almeno 100 caratteri.
+              Il messaggio dev'essere lungo almeno 150 caratteri.
             </div>
         </div>
       </div><br>
