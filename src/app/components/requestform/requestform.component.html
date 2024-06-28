@@ -1,58 +1,53 @@
 <div class="offset-top">
   <div class="reqform-container">
-    <h1>Compila qui il form</h1>
-    <h4>Istruzioni:</h4>
-    <ul>
-      <li>maybe istruzioni?</li>
-    </ul>
-
-    <form #reqForm="ngForm" (ngSubmit)="onSubmit(reqForm)">
-      <p class="fw-bold mb-0">Dove si trova questo percorso?</p>
-      <div class="form-group">
+    <h1 class="mb-5">Form per la richiesta di un percorso</h1>
+    <form #reqForm="ngForm" (ngSubmit)="onSubmit(reqForm)" class=" reqform justify-content-between">
+      <div class="form-group d-flex flex-column">
+        <p class="fw-bold mb-0">Dove si trova questo percorso?</p>
         <div class="mb-3">
-          <select title="zone" class="form-control w-25" [(ngModel)]="tmpForm.zona" name="zona">
+          <select title="zone" class="form-control selector" [(ngModel)]="tmpForm.zona" name="zona">
             <option value="AGN">Valle dell'Agno</option>
             <option value="AST">Valle dell'Astico</option>
           </select>
         </div>
-        <div class="mb-3">
-          <label for="oaUrl"><p class="mb-0 fw-bold">Incolla qui il link al percorso di OutdoorActive (il percorso deve essere pubblico)</p></label><br>
-          <p class="mb-0 text-secondary fst-italic">Esempio di link corretto: https://www.outdooractive.com/it/route/escursione/posizione/nome/id numerico/</p>
+        <div class="mb-0 d-flex flex-wrap flex-column inputform">
+          <label for="oaUrl"><p class="mb-0 fw-bold">Incolla qui il link al percorso di OutdoorActive (il percorso deve essere pubblico)</p></label>
+          <p class="mb-0 text-secondary fst-italic">Esempio di link corretto: https://www.outdooractive.com/it/route/escursione/posizione/nome/idnumerico/</p>
           <input
             title="oaUrl"
-            class="w-100 rounded border-0"
+            class="w-100 mb-1 rounded border-0"
             [(ngModel)]="tmpForm.oaUrl"
             name="oaUrl"
             required
             #oaUrl="ngModel"
-            pattern="^https:\/\/www\.outdooractive\.com\/[A-Za-z][A-Za-z]\/route\/escursione\/.+\/.+\/[0-9]+\/.*$"><br>
-            <div *ngIf="oaUrl.errors?.['pattern'] && reqForm.submitted">
-              Il link ad outdooractive deve essere come segue: https://www.outdooractive.com/it/route/escursione/posizione/nome/id numerico/
+            pattern="^https:\/\/www\.outdooractive\.com\/[A-Za-z][A-Za-z]\/route\/escursione\/.+\/.+\/[0-9]+\/.*$">
+            <div *ngIf="oaUrl.errors?.['pattern'] && reqForm.submitted" class="text-danger">
+              Il link ad outdooractive deve essere come segue: https://www.outdooractive.com/it/<span class="fw-bold">route/escursione/posizione/nome/id numerico/</span>
             </div>
-            <div *ngIf="oaUrl.errors?.['required'] && reqForm.submitted">
+            <div *ngIf="oaUrl.errors?.['required'] && reqForm.submitted" class="text-danger">
               Il link al percorso è obbligatorio!
             </div>
-        </div>
-        <div class="">
-          <label for="messaggio">Scrivi qui un breve messaggio descrittivo sul perché vorresti vedere il percorso aggiunto al nostro sito web</label><br>
+        </div><br>
+        <div class="mb-0">
+          <label for="messaggio">Scrivi qui un breve messaggio descrittivo sul perché vorresti vedere il percorso aggiunto al nostro sito web</label>
           <input
             title="messaggio"
-            class="w-100 h-25 rounded border-0"
+            class="w-100 rounded border-0 textbox"
             [(ngModel)]="tmpForm.messaggio"
             name="messaggio"
             required
             minlength="150"
             placeholder="Min. 150 caratteri"
-            #messaggio="ngModel"><br>
-            <div *ngIf="messaggio.errors?.['required'] && reqForm.submitted">
+            #messaggio="ngModel">
+            <div *ngIf="messaggio.errors?.['required'] && reqForm.submitted" class="text-danger">
               Il messaggio è obbligatorio.
             </div>
-            <div *ngIf="messaggio.errors?.['minlength'] && reqForm.submitted">
+            <div *ngIf="messaggio.errors?.['minlength'] && reqForm.submitted" class="text-danger">
               Il messaggio dev'essere lungo almeno 150 caratteri.
             </div>
-        </div>
-      </div><br>
-      <button type="submit">Submit</button>
+        </div><br>
+          <button type="submit" class="btn selector btn-light">Invia la richiesta</button>
+      </div>
     </form>
   </div>
 </div>
