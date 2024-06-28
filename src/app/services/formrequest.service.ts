@@ -11,7 +11,6 @@ export class FormrequestService {
   submitForm(form : any){
     const headers = new HttpHeaders().set('Content-type', 'application/json; charset=utf-8');
     let payload = JSON.stringify(form);
-    alert(payload);
-    return this.http.post("http://localhost:5000/api/FormReq", payload, {headers: headers}).subscribe(response => alert("OK"), error => alert("KO"));
+    return this.http.post("http://localhost:5000/api/FormReq", payload, {headers: headers}).subscribe(response => alert("Richiesta inviata correttamente"), error => alert("Errore: richiesta non inviata"));
   }
 }
