@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, HostListener, NgModuleRef, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { SearchbarService } from '../../services/searchbar.service';
 import { SearchResults } from '../../interfaces/searchResults';
 import { CommonModule, NgFor } from '@angular/common';
-import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -19,7 +19,10 @@ import { Observable, Subject, debounceTime, distinctUntilChanged, switchMap } fr
 })
 export class NavbarComponent{
 
-  constructor(private searchSrv : SearchbarService){}
+  constructor(
+    private searchSrv : SearchbarService,
+    public router : Router
+  ){}
 
   fetchedList = this.searchSrv.fetchObjects();
   filteredList : SearchResults[] = [];
