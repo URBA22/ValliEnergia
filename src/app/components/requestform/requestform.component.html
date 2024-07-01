@@ -6,8 +6,8 @@
         <p class="fw-bold mb-0">Dove si trova questo percorso?</p>
         <div class="mb-3">
           <select title="zone" class="form-control selector" [(ngModel)]="tmpForm.zona" name="zona">
-            <option value="AGN">Valle dell'Agno</option>
-            <option value="AST">Valle dell'Astico</option>
+            <option value="Agno">Valle dell'Agno</option>
+            <option value="Astico">Valle dell'Astico</option>
           </select>
         </div>
         <div class="mb-0 d-flex flex-wrap flex-column inputform">
@@ -30,20 +30,21 @@
         </div><br>
         <div class="mb-0">
           <label for="messaggio">Scrivi qui un breve messaggio descrittivo sul perché vorresti vedere il percorso aggiunto al nostro sito web</label>
-          <input
+          <textarea
             title="messaggio"
             class="w-100 rounded border-0 textbox"
             [(ngModel)]="tmpForm.messaggio"
             name="messaggio"
             required
             minlength="150"
+            maxlength="1500"
             placeholder="Min. 150 caratteri"
-            #messaggio="ngModel">
+            #messaggio="ngModel"></textarea>
             <div *ngIf="messaggio.errors?.['required'] && reqForm.submitted" class="text-danger">
               Il messaggio è obbligatorio.
             </div>
-            <div *ngIf="messaggio.errors?.['minlength'] && reqForm.submitted" class="text-danger">
-              Il messaggio dev'essere lungo almeno 150 caratteri.
+            <div *ngIf="messaggio.errors?.['minlength'] || messaggio.errors?.['maxlength'] && reqForm.submitted" class="text-danger">
+              Il messaggio deve contenere fra i 150 e i 1500 caratteri.
             </div>
         </div><br>
           <button type="submit" class="btn selector btn-light">Invia la richiesta</button>

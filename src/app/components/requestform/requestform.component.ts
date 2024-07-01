@@ -18,7 +18,7 @@ export class RequestformComponent {
   constructor(private formSrv : FormrequestService){}
 
   tmpForm = {
-    zona: 'AGN',
+    zona: 'Agno',
     oaUrl: '',
     messaggio: ''
   }
