@@ -1,7 +1,7 @@
 <div class="card-container">
   <a href="percorsi/{{perc.id}}" class="align-items-center" style="text-decoration: none; color:black">
     <div class="img-container" *ngIf="perc.immagini[0].url.length>0">
-      <img src="{{perc.immagini[0].url}}" alt=""/>
+      <img src="{{perc.immagini[0].url}}" alt="{{perc.immagini[0].alt}}"/>
     </div>
     <div class="img-container" *ngIf="perc.immagini[0].url.length == 0">
       <img src="../../../../assets/default-trail.jpg" alt=""/>
