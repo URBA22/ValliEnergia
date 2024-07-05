@@ -1,7 +1,7 @@
 <div class="card-container">
   <a href="centrali/{{cent.id}}" class="align-items-center" style="text-decoration: none; color:black">
     <div class="img-container" *ngIf="cent.immagini[0].url.length>0"><!-- height 45%-->
-      <img src="{{cent.immagini[0].url}}" alt=""/>
+      <img src="{{cent.immagini[0].url}}" alt="{{cent.immagini[0].alt}}"/>
     </div>
     <div class="img-container" *ngIf="cent.immagini[0].url.length == 0"><!-- height 45%-->
       <img src="../../../../assets/default-plant.jpg" alt=""/>

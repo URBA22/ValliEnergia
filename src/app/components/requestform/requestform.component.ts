@@ -19,8 +19,9 @@ export class RequestformComponent {
 
   tmpForm = {
     zona: 'Agno',
+    dataOra: Date,
     oaUrl: '',
-    messaggio: ''
+    messaggio: '',
   }
 
   async onSubmit(form: NgForm){

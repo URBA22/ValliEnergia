@@ -22,7 +22,7 @@
             #oaUrl="ngModel"
             pattern="^https:\/\/www\.outdooractive\.com\/[A-Za-z][A-Za-z]\/route\/escursione\/.+\/.+\/[0-9]+\/.*$">
             <div *ngIf="oaUrl.errors?.['pattern'] && reqForm.submitted" class="text-danger">
-              Il link ad outdooractive deve essere come segue: https://www.outdooractive.com/it/<span class="fw-bold">route/escursione/posizione/nome/id numerico/</span>
+            Il link ad outdooractive deve essere come segue: https://www.outdooractive.com/it/<span class="fw-bold">route/escursione/posizione/nome/id numerico/</span>
             </div>
             <div *ngIf="oaUrl.errors?.['required'] && reqForm.submitted" class="text-danger">
               Il link al percorso è obbligatorio!
