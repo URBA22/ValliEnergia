@@ -62,7 +62,6 @@ export class CentraleDetailComponent implements OnInit {
     if(this.linkedPercorsi.length === 0 && this.centrale.percorsi){
       this.centrale.percorsi.forEach(trailId => {
         this.percorsiSrv.fetchPercorsiByID(trailId.toString()).subscribe((item: Percorsi) => {
-          alert(JSON.stringify(item))
           this.linkedPercorsi.push(item);
         });
       });
