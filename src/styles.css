@@ -19,6 +19,8 @@ body::-webkit-scrollbar{
 
 .offset-top{
   margin-top: 6rem;
+  overflow-y:hidden;
+  overflow-x: auto;
 }
 
 .flex-center{

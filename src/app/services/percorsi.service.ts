@@ -1,7 +1,8 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Percorsi } from '../interfaces/percorsi';
+import { environment } from '../../environments/environments';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Percorsi } from '../interfaces/percorsi';
 export class PercorsiService {
 
   constructor(private http:HttpClient) { }
-  private percorsiUrl = "http://localhost:5000/api/Percorsi";
+  private percorsiUrl = environment.apiUrl + "/percorsi";
 
   fetchPercorsi():Observable<Percorsi[]>{
     return this.http.get<Percorsi[]>(this.percorsiUrl);

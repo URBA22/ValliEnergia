@@ -3,9 +3,6 @@ import { Centrali } from '../../interfaces/centrali';
 import { NgFor, NgIf } from '@angular/common';
 import { CentraliService } from '../../services/centrali.service';
 import { CentraleCardComponent } from './centrale-card/centrale-card.component';
-import { Subject, Observable } from 'rxjs';
-import { CentraleDetailComponent } from './centrale-detail/centrale-detail.component';
-import { subscribe } from 'diagnostics_channel';
 
 
 @Component({

@@ -3,7 +3,6 @@ import { Centrali } from '../../../interfaces/centrali';
 import { CommonModule, NgFor } from '@angular/common';
 import { DataTransferServiceService } from '../../../services/data-transfer-service.service';
 import { OnInit } from '@angular/core';
-import { window } from 'rxjs';
 import { Router } from '@angular/router';
 import { CentraliService } from '../../../services/centrali.service';
 import { Percorsi } from '../../../interfaces/percorsi';
@@ -62,7 +61,6 @@ export class CentraleDetailComponent implements OnInit {
     if(this.linkedPercorsi.length === 0 && this.centrale.percorsi){
       this.centrale.percorsi.forEach(trailId => {
         this.percorsiSrv.fetchPercorsiByID(trailId.toString()).subscribe((item: Percorsi) => {
-          alert(JSON.stringify(item))
           this.linkedPercorsi.push(item);
         });
       });

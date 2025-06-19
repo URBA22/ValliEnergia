@@ -26,7 +26,14 @@ export class RequestformComponent {
 
   async onSubmit(form: NgForm){
     if(form.valid){
-      await this.formSrv.submitForm(this.tmpForm);
+      this.formSrv.submitForm(this.tmpForm).subscribe(
+        res => {
+          alert(res);
+        },
+        error => {
+          alert("Errore nell'invio della richiesta: " + error);
+        }
+      );
       setTimeout(() => {
         form.resetForm();
       }, 2000);

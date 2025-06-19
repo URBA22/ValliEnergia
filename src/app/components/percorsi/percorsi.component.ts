@@ -1,9 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Percorsi} from '../../interfaces/percorsi';
 import { CommonModule, NgFor } from '@angular/common';
 import { PercorsiService } from '../../services/percorsi.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Observable, Subject, debounceTime, distinctUntilChanged, filter, switchMap} from 'rxjs';
 import { PercorsoCardComponent } from './percorso-card/percorso-card.component';
 
 @Component({

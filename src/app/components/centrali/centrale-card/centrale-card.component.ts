@@ -1,9 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Centrali } from '../../../interfaces/centrali';
-import { EventEmitter } from 'stream';
-import { CentraliComponent } from '../centrali.component';
-import { Subscriber } from 'rxjs';
-import { AppRoutingModule } from '../../../app.routes';
 import { RouterLink, RouterModule } from '@angular/router';
 import { DataTransferServiceService } from '../../../services/data-transfer-service.service';
 import { NgIf } from '@angular/common';

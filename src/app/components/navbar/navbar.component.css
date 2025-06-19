@@ -1,3 +1,9 @@
+.app_logo{
+  @media(max-width: 767px){
+    width: 80%;
+  }
+}
+
 .navbar-custom{
   position: sticky;
   top: 0;
@@ -5,6 +11,7 @@
   @media(max-width: 767px){
     background-color: white;
   }
+  z-index: 2;
 }
 .navbar-scrolled{
   background-color: rgba(255, 255, 255);
@@ -93,7 +100,7 @@ button.btn-custom:focus, .linkactive{
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 1;
+  z-index: 2;
   top: 100%;
   right: 1%;
   padding: 1rem 1rem;

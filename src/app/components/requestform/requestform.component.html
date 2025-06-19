@@ -1,8 +1,11 @@
 <div class="offset-top">
   <div class="reqform-container">
-    <h1 class="mb-5">Form per la richiesta di un percorso</h1>
+    <h1 class="mb-5">Form per la segnalazione di un percorso</h1>
     <form #reqForm="ngForm" (ngSubmit)="onSubmit(reqForm)" class=" reqform justify-content-between">
       <div class="form-group d-flex flex-column">
+        <p class="align-self-center">
+          In questa form puoi segnalare un percorso che vorresti vedere aggiunto alla nostra web app. 
+          Il percorso dev'essere presente in OutdoorActive e dev'essere pubblico.</p>
         <p class="fw-bold mb-0">Dove si trova questo percorso?</p>
         <div class="mb-3">
           <select title="zone" class="form-control selector" [(ngModel)]="tmpForm.zona" name="zona">
